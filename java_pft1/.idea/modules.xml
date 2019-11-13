@@ -2,24 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" group="addressbook-web-tests" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" group="addressbook-web-tests" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests_test.iml" group="addressbook-web-tests" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/github-sample.iml" group="github-sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/github-sample_main.iml" group="github-sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/github-sample_test.iml" group="github-sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interview.iml" filepath="$PROJECT_DIR$/.idea/modules/interview.iml" group="interview" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interview_main.iml" filepath="$PROJECT_DIR$/.idea/modules/interview_main.iml" group="interview" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interview_test.iml" filepath="$PROJECT_DIR$/.idea/modules/interview_test.iml" group="interview" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-sample.iml" group="rest-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clent11024.iml" filepath="$PROJECT_DIR$/.idea/modules/clent11024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clent11024.main.iml" filepath="$PROJECT_DIR$/.idea/modules/clent11024.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clent11024.test.iml" filepath="$PROJECT_DIR$/.idea/modules/clent11024.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rapid.iml" filepath="$PROJECT_DIR$/.idea/modules/rapid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rapid.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rapid.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rapid.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rapid.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-sample_main.iml" group="rest-sample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-sample_test.iml" group="rest-sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox1.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox1.iml" group="sandbox1" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox1_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox1_main.iml" group="sandbox1" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox1_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox1_test.iml" group="sandbox1" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-sample.iml" group="soap-sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-sample_main.iml" group="soap-sample" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-sample_test.iml" group="soap-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox1.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox1.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox1.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox1.test.iml" />
     </modules>
   </component>
 </project>

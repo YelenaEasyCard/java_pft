@@ -32,7 +32,7 @@ public class DoDeal {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("LoginID")).click();
         driver.findElement(By.id("LoginID")).clear();
-        driver.findElement(By.id("LoginID")).sendKeys("10416");
+        driver.findElement(By.id("LoginID")).sendKeys("11042");
         driver.findElement(By.id("Password")).clear();
         driver.findElement(By.id("Password")).sendKeys("test1234");
         driver.findElement(By.id("btnEnter")).click();
@@ -53,7 +53,6 @@ public class DoDeal {
         driver.findElement(By.id("Sum")).sendKeys("1");
         driver.findElement(By.id("DealType")).click();
         driver.findElement(By.id("DealType")).click();
-        driver.findElement(By.id("MType")).click();
         driver.findElement(By.id("MType")).click();
         driver.findElement(By.id("btnSubmit")).click();
         driver.findElement(By.id("MenuActivties")).click();

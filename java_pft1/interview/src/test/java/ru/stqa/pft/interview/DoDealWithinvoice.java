@@ -49,7 +49,7 @@ public class DoDealWithinvoice {
         driver.findElement(By.id("Year2")).click();
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
-        driver.findElement(By.id("Sum")).sendKeys("2");
+        driver.findElement(By.id("Sum")).sendKeys("3");
         driver.findElement(By.id("DealType")).click();
         driver.findElement(By.id("MType")).click();
         new Select(driver.findElement(By.id("MType"))).selectByValue("1");

@@ -4,42 +4,22 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook-web-tests" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/addressbook-web-tests" />
-          </set>
-        </option>
-        <option name="useAutoImport" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/github-sample" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/clent11024" />
         <option name="gradleHome" value="C:/Tools/gradle-4.8" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/github-sample" />
+            <option value="$PROJECT_DIR$/clent11024" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/interview" />
-        <option name="gradleHome" value="C:/Tools/gradle-4.8" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/interview" />
-          </set>
-        </option>
-        <option name="useAutoImport" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/mantis-tests" />
         <option name="gradleHome" value="C:/Tools/gradle-4.8" />
@@ -49,20 +29,24 @@
           </set>
         </option>
         <option name="useAutoImport" value="true" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/rest-sample" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/rapid" />
         <option name="gradleHome" value="C:/Tools/gradle-4.8" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/rest-sample" />
+            <option value="$PROJECT_DIR$/rapid" />
           </set>
         </option>
-        <option name="useAutoImport" value="true" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sandbox1" />
         <option name="modules">
@@ -71,18 +55,7 @@
           </set>
         </option>
         <option name="useAutoImport" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/soap-sample" />
-        <option name="gradleHome" value="C:/Tools/gradle-4.8" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/soap-sample" />
-          </set>
-        </option>
-        <option name="useAutoImport" value="true" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
