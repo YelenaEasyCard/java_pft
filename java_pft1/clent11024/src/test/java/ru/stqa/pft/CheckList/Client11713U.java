@@ -25,7 +25,7 @@ J5:
 Resreve Deaals With Shekels
 Relise J5
 
-Report 1: deals, invoices, iska, payments, credits, billings, one-time charge, zicui
+Report 1:
 Passed Deals
 Failed Deals
 
@@ -74,8 +74,7 @@ public class Client11713U {
 
     @Test
     public void testCheckList() throws Exception {
-       /*
-        //LoginEmployerLogout
+          //LoginEmployerLogout
         driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -86,12 +85,11 @@ public class Client11713U {
         driver.findElement(By.id("LoginID")).sendKeys("11713");
         driver.findElement(By.id("Password")).click();
         driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("..........");
+        driver.findElement(By.id("Password")).sendKeys("test135");
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("a.ExitIcon.Icons")).click();
-        */
-        //LoginManager
+         //LoginManager
           driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("MangerUser")).click();
