@@ -22,26 +22,22 @@ public class CreateCustomerEng {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://roqa.rapid-image.net";
+        baseUrl = "https://revitalc.rapid-image.net";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
-    public void testCreateCustomer() throws Exception {
-            driver.get("https://roqa.rapid-image.net/login");
-            driver.manage().window().maximize();
-           // driver.findElement(By.cssSelector("input.form-control.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-required")).click();
-        driver.findElement(By.xpath("//input[@type='text']")).click();
+    public void testLoginLogout() throws Exception {
+        driver.get("https://revitalc.rapid-image.net/login");
+        driver.manage().window().maximize();
+        driver.findElement(By.cssSelector("input.form-control.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-required")).click();
         driver.findElement(By.xpath("//input[@type='text']")).clear();
-            driver.findElement(By.xpath("//input[@type='text']")).sendKeys("admin-2");
-            driver.findElement(By.xpath("//input[@type='password']")).clear();
-            driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Admin_123");
-            driver.findElement(By.id("login_btn")).click();
-            for (int second = 0;; second++) {
-                if (second >= 60) fail("timeout");
-                try { if (isElementPresent(By.cssSelector("div.title.no-burger.ng-binding"))) break; } catch (Exception e) {}
-                Thread.sleep(1000);
-            }
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("admin");
+        driver.findElement(By.xpath("//input[@type='password']")).clear();
+        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Admin_123");
+        driver.findElement(By.cssSelector("button.login_btn.btn.ng-binding")).click();
+        Thread.sleep(4000);
+        driver.get(" https://revitalc.rapid-image.net/patients/list");
         Thread.sleep(6000);
         driver.findElement(By.cssSelector("div.menu-icon.patients-icon")).click();
         Thread.sleep(3000);
@@ -83,7 +79,7 @@ public class CreateCustomerEng {
         //driver.findElement(By.cssSelector("div.ps-scrollbar-y")).click();
         //WebElement baseElement = driver.findElement(By.cssSelector("div.form-column.scroll-wrapper.perfect-scrollbar-wrap.ps-container.ps-theme-default.ps-active-y > div.ps-scrollbar-y-rail"));
         //Actions clicker = new Actions(driver);
-       // clicker.moveToElement(baseElement).moveByOffset(0, 100).click().perform();
+        // clicker.moveToElement(baseElement).moveByOffset(0, 100).click().perform();
         driver.findElement(By.id("phone_number_1")).click();
         driver.findElement(By.id("phone_number_1")).clear();
         driver.findElement(By.id("phone_number_1")).sendKeys("0585456910");
@@ -92,7 +88,7 @@ public class CreateCustomerEng {
         driver.findElement(By.id("phone_note_1")).sendKeys("notes 1");
         //driver.findElement(By.cssSelector("div.form-column.scroll-wrapper.perfect-scrollbar-wrap.ps-container.ps-theme-default.ps-active-y > div.ps-scrollbar-y-rail")).click();
         //((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-      driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
+        driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
         new Select(driver.findElement(By.id("phone_type_2"))).selectByVisibleText("Home");
         driver.findElement(By.id("phone_number_2")).click();
         driver.findElement(By.id("phone_number_2")).clear();
@@ -108,7 +104,7 @@ public class CreateCustomerEng {
         driver.findElement(By.id("phone_note_3")).click();
         driver.findElement(By.id("phone_note_3")).clear();
         driver.findElement(By.id("phone_note_3")).sendKeys("notes 3");
-       driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
+        driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
         //clicker.moveToElement(baseElement).moveByOffset(0, 100).click().perform();
         new Select(driver.findElement(By.id("phone_type_4"))).selectByVisibleText("Emergency");
         driver.findElement(By.id("phone_number_4")).click();
@@ -117,7 +113,7 @@ public class CreateCustomerEng {
         driver.findElement(By.id("phone_note_4")).click();
         driver.findElement(By.id("phone_note_4")).clear();
         driver.findElement(By.id("phone_note_4")).sendKeys("notes 4");
-       driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
+        driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
         //clicker.moveToElement(baseElement).moveByOffset(0, 100).click().perform();
         new Select(driver.findElement(By.id("phone_type_5"))).selectByVisibleText("Father Cell");
         driver.findElement(By.id("phone_number_5")).click();
@@ -135,14 +131,14 @@ public class CreateCustomerEng {
         driver.findElement(By.id("phone_note_6")).click();
         driver.findElement(By.id("phone_note_6")).clear();
         driver.findElement(By.id("phone_note_6")).sendKeys("notes 6");
-       // clicker.moveToElement(baseElement).moveByOffset(0, -100).click().perform();
+        // clicker.moveToElement(baseElement).moveByOffset(0, -100).click().perform();
         Thread.sleep(4000);
-      driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
+        driver.findElement(By.cssSelector("i.glyphicon.glyphicon-plus")).click();
         Thread.sleep(4000);
         //clicker.moveToElement(baseElement).moveByOffset(0, 200).click().perform();
-         //driver.findElement(By.id("tab-content")).click();
+        //driver.findElement(By.id("tab-content")).click();
         //clicker.moveToElement(baseElement).moveByOffset(0, 200).click().perform();
-       //clicker.moveToElement(baseElement).moveByOffset(0, 50).click().perform();
+        //clicker.moveToElement(baseElement).moveByOffset(0, 50).click().perform();
         new Select(driver.findElement(By.id("phone_type_7"))).selectByVisibleText("Fax");
         driver.findElement(By.id("phone_number_7")).click();
         driver.findElement(By.id("phone_number_7")).clear();
@@ -153,7 +149,7 @@ public class CreateCustomerEng {
         //clicker.moveToElement(baseElement).moveByOffset(0, 50).click().perform();
         driver.findElement(By.id("simple-dropdown")).click();
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Attendance Tracking'])[1]/following::label[2]")).click();
-        }
+    }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {

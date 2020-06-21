@@ -21,7 +21,7 @@ public class CreateCreditCardBillingClient {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-       baseUrl = "https://stage.e-c.co.il";
+       baseUrl = "https://ectest.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -29,12 +29,12 @@ public class CreateCreditCardBillingClient {
     public void testCreditCardBillingClient() throws Exception {
         // driver.get("https://stage.e-c.co.il");
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("https://stage.e-c.co.il/Accounts/Login");
+        driver.get("https://ectest.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.findElement(By.id("LoginID")).click();
         driver.findElement(By.id("LoginID")).clear();
-        driver.findElement(By.id("LoginID")).sendKeys("10899");
+        driver.findElement(By.id("LoginID")).sendKeys("22652");
         driver.findElement(By.id("Password")).click();
         driver.findElement(By.id("Password")).clear();
         driver.findElement(By.id("Password")).sendKeys("test1234");
@@ -43,6 +43,7 @@ public class CreateCreditCardBillingClient {
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("BillingSystem")).click();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        Thread.sleep(4000);
         driver.findElement(By.id("create-user")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         try {
@@ -106,13 +107,13 @@ public class CreateCreditCardBillingClient {
         driver.findElement(By.id("EditedCustomer_ValYear")).click();
         driver.findElement(By.id("accordionClientDetails3")).click();
         driver.findElement(By.id("EditedCustomer_FirstPayDate")).clear();
-        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("26/09/2019");
+        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("15/12/2019");
         driver.findElement(By.id("EditedCustomer_LastPayDate")).clear();
         driver.findElement(By.id("EditedCustomer_LastPayDate")).sendKeys("26/12/2020");
         driver.findElement(By.id("trTotalSum")).click();
         driver.findElement(By.id("EditedCustomer_Totalsum")).clear();
-        driver.findElement(By.id("EditedCustomer_Totalsum")).sendKeys("30");
-        new Select(driver.findElement(By.id("EditedCustomerPayDay"))).selectByValue("26");
+        driver.findElement(By.id("EditedCustomer_Totalsum")).sendKeys("1.9");
+        new Select(driver.findElement(By.id("EditedCustomerPayDay"))).selectByValue("15");
         driver.findElement(By.id("btnAddUpdateCustomer")).click();
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
         for (int second = 0;; second++) {

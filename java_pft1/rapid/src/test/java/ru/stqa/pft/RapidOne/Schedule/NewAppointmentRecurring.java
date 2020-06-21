@@ -33,15 +33,9 @@ public class NewAppointmentRecurring {
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("admin-2");
         driver.findElement(By.xpath("//input[@type='password']")).clear();
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Admin_123");
-        driver.findElement(By.id("login_btn")).click();
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.cssSelector("div.title.no-burger.ng-binding"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
+        driver.findElement(By.cssSelector("button.login_btn.btn.ng-binding")).click();
+        Thread.sleep(4000);
+        driver.get(" https://roqa.rapid-image.net/patients/list");
         Thread.sleep(4000);
         driver.get("https://roqa.rapid-image.net/schedule/shift-management-wizard");
         Thread.sleep(3000);
@@ -51,11 +45,11 @@ public class NewAppointmentRecurring {
         Thread.sleep(3000);
         driver.findElement(By.id("appointment_date")).click();
         driver.findElement(By.id("appointment_date")).clear();
-        driver.findElement(By.id("appointment_date")).sendKeys("Tue, Nov 05, 2019");
+        driver.findElement(By.id("appointment_date")).sendKeys("Thu, Jan 02, 2020");
         Thread.sleep(3000);
         //new Select(driver.findElement(By.id("appt_doctor"))).selectByVisibleText("daniel");
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Time'])[1]/following::input[1]")).clear();
-        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Time'])[1]/following::input[1]")).sendKeys("15");
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Time'])[1]/following::input[1]")).sendKeys("09");
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=':'])[1]/following::input[1]")).clear();
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=':'])[1]/following::input[1]")).sendKeys("00");
         driver.findElement(By.cssSelector("button.btn.btn-info.ng-binding")).click();

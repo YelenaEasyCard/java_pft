@@ -25,8 +25,6 @@ public class Client10897RedirectShekel {
 
     @Test
     public void testRedirect() throws Exception {
-        // driver.get("https://stage.e-c.co.il");
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -43,8 +41,6 @@ public class Client10897RedirectShekel {
         driver.findElement(By.id("ExitSubMenu")).click();
         driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
         Thread.sleep(4000);
-        //driver.findElement(By.id("accordionSettings9")).click();
-        //driver.findElement(By.id("accordionSettings3")).click();
         driver.findElement(By.id("accordionSettings4")).click();
         driver.findElement(By.id("TotalSum")).click();
         driver.findElement(By.id("TotalSum")).clear();
@@ -70,6 +66,9 @@ public class Client10897RedirectShekel {
         driver.findElement(By.id("RedirectNote")).click();
         driver.findElement(By.id("RedirectNote")).clear();
         driver.findElement(By.id("RedirectNote")).sendKeys("notes");
+        driver.findElement(By.id("RedirectURLTrue")).click();
+        driver.findElement(By.id("RedirectURLTrue")).clear();
+        driver.findElement(By.id("RedirectURLTrue")).sendKeys("https://www.google.com/");
         driver.findElement(By.id("CreateRedirectPaymentUrl")).click();
     }
     @AfterClass(alwaysRun = true)

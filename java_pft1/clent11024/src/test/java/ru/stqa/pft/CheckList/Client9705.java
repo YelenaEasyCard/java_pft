@@ -57,7 +57,6 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 public class Client9705 {
@@ -69,14 +68,14 @@ public class Client9705 {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://secure.e-c.co.il";
+        baseUrl = "https://stage.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
     public void testCheckList() throws Exception {
-           //LoginEmployerLogout
-        driver.get("https://secure.e-c.co.il/Accounts/Login");
+         //LoginEmployerLogout
+        driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -91,7 +90,7 @@ public class Client9705 {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("a.ExitIcon.Icons")).click();
           //LoginManager
-        driver.get("https://secure.e-c.co.il/Accounts/Login");
+        driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("MangerUser")).click();
         driver.manage().window().maximize();
@@ -104,8 +103,7 @@ public class Client9705 {
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(4000);
-        /*
-          //DEAL CARD READER / SHEKEL
+            //DEAL CARD READER / SHEKEL
          driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
@@ -151,10 +149,10 @@ public class Client9705 {
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("590001523");
+        driver.findElement(By.id("CardNumber")).sendKeys("375510390000037");
         new Select(driver.findElement(By.id("Code"))).selectByValue("50");
-        new Select(driver.findElement(By.id("Month2"))).selectByVisibleText("08");
-        new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2021");
+        new Select(driver.findElement(By.id("Month2"))).selectByVisibleText("03");
+        new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2022");
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
         driver.findElement(By.id("Sum")).sendKeys("21");
@@ -253,7 +251,7 @@ public class Client9705 {
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("375510190000062");
+        driver.findElement(By.id("CardNumber")).sendKeys("5326103300000443");
         new Select(driver.findElement(By.id("Code"))).selectByValue("50");
         new Select(driver.findElement(By.id("Month2"))).selectByValue("03");
         new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2022");
@@ -275,7 +273,7 @@ public class Client9705 {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-       // DEAL WITH INVOICE
+         // DEAL WITH INVOICE
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
@@ -447,15 +445,15 @@ public class Client9705 {
         driver.findElement(By.id("RedirectNote")).clear();
         driver.findElement(By.id("RedirectNote")).sendKeys("notes");
         driver.findElement(By.id("CreateRedirectPaymentUrl")).click();
-        // J5
+          // J5
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("Reservationframe")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("12012600023456100=0900015239989421085");
-        new Select(driver.findElement(By.id("Code"))).selectByValue("00");
-        //new Select(driver.findElement(By.id("Month2"))).selectByVisibleText("");
-        //new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("");
+        driver.findElement(By.id("CardNumber")).sendKeys("375510190000062");
+        new Select(driver.findElement(By.id("Code"))).selectByValue("50");
+        new Select(driver.findElement(By.id("Month2"))).selectByVisibleText("03");
+        new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2022");
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
         driver.findElement(By.id("Sum")).sendKeys("15");
@@ -467,56 +465,15 @@ public class Client9705 {
         driver.findElement(By.id("Note")).clear();
         driver.findElement(By.id("Note")).sendKeys("notes");
         driver.findElement(By.id("j5btnSubmit")).click();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-        // RELISE DEAL J5
-        driver.findElement(By.id("MenuActivties")).click();
+        Thread.sleep(4000);
+           // RELISE DEAL J5
+        Thread.sleep(4000);
         driver.findElement(By.id("ResImplementation")).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//table[@id='tfhover']/tbody/tr[2]/td[2]/label/a")).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        new Select(driver.findElement(By.id("MType"))).selectByValue("1");
-        driver.findElement(By.id("OwnerName")).click();
-        driver.findElement(By.id("OwnerName")).clear();
-        driver.findElement(By.id("OwnerName")).sendKeys("Yelena");
-        driver.findElement(By.id("Note")).click();
-        driver.findElement(By.id("Note")).clear();
-        driver.findElement(By.id("Note")).sendKeys("notes");
-        driver.findElement(By.cssSelector("span.checkmark")).click();
-        driver.findElement(By.id("InvoiceName")).click();
-        driver.findElement(By.id("InvoiceName")).clear();
-        driver.findElement(By.id("InvoiceName")).sendKeys("CreditCardOwnerName");
-        driver.findElement(By.id("InvoiceAddress")).click();
-        driver.findElement(By.id("InvoiceAddress")).clear();
-        driver.findElement(By.id("InvoiceAddress")).sendKeys("CreditCardOwnerAddress");
-        driver.findElement(By.id("InvioicePhoneNumber")).click();
-        driver.findElement(By.id("InvioicePhoneNumber")).clear();
-        driver.findElement(By.id("InvioicePhoneNumber")).sendKeys("0585456911");
-        driver.findElement(By.id("InvoiceTaxId")).click();
-        driver.findElement(By.id("InvoiceTaxId")).clear();
-        driver.findElement(By.id("InvoiceTaxId")).sendKeys("348658899");
-        driver.findElement(By.id("InvoiceEMail")).click();
-        driver.findElement(By.id("InvoiceEMail")).clear();
-        driver.findElement(By.id("InvoiceEMail")).sendKeys("korsakovyelena@gmail.com");
-        driver.findElement(By.id("InvoiceProduct")).click();
-        driver.findElement(By.id("InvoiceProduct")).clear();
-        driver.findElement(By.id("InvoiceProduct")).sendKeys("product type");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        Thread.sleep(4000);
         driver.findElement(By.id("btnSubmit")).click();
-        Thread.sleep(4000);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.id("MenuActivties"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
-        Thread.sleep(4000);
-        driver.findElement(By.id("MenuActivties")).click();
         Thread.sleep(4000);
         // Create Kabala (Vouchers Invoices)
         driver.findElement(By.id("MenuActivties")).click();
@@ -594,13 +551,13 @@ public class Client9705 {
         new Select(driver.findElement(By.id("ddlDocType"))).selectByValue("pdf");
         driver.findElement(By.id("FromDate")).click();
         driver.findElement(By.id("FromDate")).clear();
-        driver.findElement(By.id("FromDate")).sendKeys("12/11/2019");
+        driver.findElement(By.id("FromDate")).sendKeys("17/03/2020");
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("div.row.container")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("toDate")).click();
         driver.findElement(By.id("toDate")).clear();
-        driver.findElement(By.id("toDate")).sendKeys("12/11/2019");
+        driver.findElement(By.id("toDate")).sendKeys("17/03/2020");
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("div.row.container")).click();
         Thread.sleep(4000);
@@ -609,7 +566,7 @@ public class Client9705 {
         Thread.sleep(4000);
         driver.findElement(By.id("gview_jqGrid"));
         Thread.sleep(4000);
-        //  REPORT KABALOT
+           //  REPORT KABALOT
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("MenuReports")).click();
         driver.findElement(By.id("ECInvoiceRep")).click();
@@ -618,55 +575,30 @@ public class Client9705 {
         new Select(driver.findElement(By.id("ddlDocType"))).selectByValue("pdf");
         driver.findElement(By.id("FromDate")).click();
         driver.findElement(By.id("FromDate")).clear();
-        driver.findElement(By.id("FromDate")).sendKeys("12/11/2019");
+        driver.findElement(By.id("FromDate")).sendKeys("17/03/2020");
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("div.row.container")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("toDate")).click();
         driver.findElement(By.id("toDate")).clear();
-        driver.findElement(By.id("toDate")).sendKeys("12/11/2019");
+        driver.findElement(By.id("toDate")).sendKeys("17/03/2020");
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("div.row.container")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("PaymentInfoReportShow")).click();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        Thread.sleep(4000);
-        */
-         // BILLING: CREATE NEW CREDIT CARD CLIENT
+            Thread.sleep(4000);
+       /*
+        // BILLING: CREATE NEW CREDIT CARD CLIENT
         driver.findElement(By.id("MenuActivties")).click();
         Thread.sleep(4000);
-        try {
-            assertTrue(isElementPresent(By.id("BillingSystem")));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.id("BillingSystem"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
         driver.findElement(By.id("BillingSystem")).click();
         Thread.sleep(4000);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.findElement(By.id("create-user")).click();
         Thread.sleep(4000);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        try {
-            assertTrue(isElementPresent(By.id("accordionClientDetails1")));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.id("accordionClientDetails1"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
+        Thread.sleep(1000);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         WebElement elemX = driver.findElement(By.id("accordionClientDetails1"));
         Thread.sleep(4000);
@@ -708,38 +640,31 @@ public class Client9705 {
         Thread.sleep(4000);
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("375510190000062");
+        driver.findElement(By.id("CardNumber")).sendKeys("5521771900043717");
         driver.findElement(By.id("EditedCustomer_ValMonth")).click();
         new Select(driver.findElement(By.id("ValMonth"))).selectByVisibleText("03");
         new Select(driver.findElement(By.id("ValYear"))).selectByVisibleText("2022");
         driver.findElement(By.id("CVV")).click();
         driver.findElement(By.id("CVV")).clear();
-        driver.findElement(By.id("CVV")).sendKeys("424");
+        driver.findElement(By.id("CVV")).sendKeys("095");
         driver.findElement(By.id("TZ")).click();
         driver.findElement(By.id("TZ")).clear();
-        driver.findElement(By.id("TZ")).sendKeys("348658899");
+        driver.findElement(By.id("TZ")).sendKeys("122222227");
         driver.findElement(By.id("btnInitDealStart")).click();
         Thread.sleep(4000);
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.id("accordionClientDetails3"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
         Thread.sleep(3000);
         driver.findElement(By.id("accordionClientDetails3")).click();
         driver.findElement(By.id("EditedCustomer_FirstPayDate")).clear();
-        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("12/11/2019");
+        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("17/03/2020");
         driver.findElement(By.id("EditedCustomer_LastPayDate")).clear();
         driver.findElement(By.id("EditedCustomer_LastPayDate")).sendKeys("12/11/2020");
         driver.findElement(By.id("trTotalSum")).click();
         driver.findElement(By.id("EditedCustomer_Totalsum")).clear();
         driver.findElement(By.id("EditedCustomer_Totalsum")).sendKeys("5");
+        new Select(driver.findElement(By.id("EditedCustomerPayDay"))).selectByValue("17");
         driver.findElement(By.id("btnAddUpdateCustomer")).click();
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-        Thread.sleep(5000);
+       Thread.sleep(5000);
         for (int second = 0; ; second++) {
             if (second >= 60) fail("timeout");
             try {
@@ -764,141 +689,9 @@ public class Client9705 {
             }
             Thread.sleep(3000);
         }
-        Thread.sleep(6000);
-        driver.findElement(By.id("MenuActivties")).click();
-        Thread.sleep(4000);
-        try {
-            assertTrue(isElementPresent(By.id("BillingSystem")));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.id("BillingSystem"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
-        driver.findElement(By.id("BillingSystem")).click();
-        Thread.sleep(4000);
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.findElement(By.id("create-user")).click();
-        Thread.sleep(4000);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        try {
-            assertTrue(isElementPresent(By.id("accordionClientDetails1")));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.id("accordionClientDetails1"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        WebElement elemXw = driver.findElement(By.id("accordionClientDetails1"));
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("//div[@id='divCreateEditCustomer']/div/form/div[2]/button")).click();
-        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-        driver.findElement(By.id("EditedCustomer_LastName")).click();
-        driver.findElement(By.id("EditedCustomer_LastName")).clear();
-        driver.findElement(By.id("EditedCustomer_LastName")).sendKeys("Neon");
-        driver.findElement(By.id("EditedCustomer_Name")).click();
-        driver.findElement(By.id("EditedCustomer_Name")).clear();
-        driver.findElement(By.id("EditedCustomer_Name")).sendKeys("Yelena");
-        driver.findElement(By.id("EditedCustomer_IdentityNumber")).click();
-        driver.findElement(By.id("EditedCustomer_IdentityNumber")).clear();
-        driver.findElement(By.id("EditedCustomer_IdentityNumber")).sendKeys("348658899");
-        driver.findElement(By.id("EditedCustomer_FileNum")).click();
-        driver.findElement(By.id("EditedCustomer_FileNum")).clear();
-        driver.findElement(By.id("EditedCustomer_FileNum")).sendKeys("123456");
-        driver.findElement(By.id("EditedCustomer_Address")).click();
-        driver.findElement(By.id("EditedCustomer_Address")).clear();
-        driver.findElement(By.id("EditedCustomer_Address")).sendKeys("Ha-Melakha St 14");
-        driver.findElement(By.id("EditedCustomer_City")).click();
-        driver.findElement(By.id("EditedCustomer_City")).clear();
-        driver.findElement(By.id("EditedCustomer_City")).sendKeys("Netanya");
-        driver.findElement(By.id("EditedCustomer_postalCode")).click();
-        driver.findElement(By.id("EditedCustomer_postalCode")).clear();
-        driver.findElement(By.id("EditedCustomer_postalCode")).sendKeys("4250545");
-        driver.findElement(By.id("EditedCustomer_Phone")).clear();
-        driver.findElement(By.id("EditedCustomer_Phone")).sendKeys("0585456911");
-        driver.findElement(By.id("EditedCustomer_Phone2")).click();
-        driver.findElement(By.id("EditedCustomer_Phone2")).clear();
-        driver.findElement(By.id("EditedCustomer_Phone2")).sendKeys("0585456910");
-        driver.findElement(By.id("EditedCustomer_Email")).click();
-        driver.findElement(By.id("EditedCustomer_Email")).clear();
-        driver.findElement(By.id("EditedCustomer_Email")).sendKeys("korsakovyelena@gmail.com");
-        driver.findElement(By.id("EditedCustomer_Note")).click();
-        driver.findElement(By.id("EditedCustomer_Note")).clear();
-        driver.findElement(By.id("EditedCustomer_Note")).sendKeys("notes");
-        driver.findElement(By.id("btnInitDeal")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.id("CardNumber")).click();
-        driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("375510190000062");
-        driver.findElement(By.id("EditedCustomer_ValMonth")).click();
-        new Select(driver.findElement(By.id("ValMonth"))).selectByVisibleText("03");
-        new Select(driver.findElement(By.id("ValYear"))).selectByVisibleText("2022");
-        driver.findElement(By.id("CVV")).click();
-        driver.findElement(By.id("CVV")).clear();
-        driver.findElement(By.id("CVV")).sendKeys("424");
-        driver.findElement(By.id("TZ")).click();
-        driver.findElement(By.id("TZ")).clear();
-        driver.findElement(By.id("TZ")).sendKeys("348658899");
-        driver.findElement(By.id("btnInitDealStart")).click();
-        Thread.sleep(4000);
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.id("accordionClientDetails3"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
         Thread.sleep(3000);
-        driver.findElement(By.id("accordionClientDetails3")).click();
-        driver.findElement(By.id("EditedCustomer_FirstPayDate")).clear();
-        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("12/11/2019");
-        driver.findElement(By.id("EditedCustomer_LastPayDate")).clear();
-        driver.findElement(By.id("EditedCustomer_LastPayDate")).sendKeys("12/11/2020");
-        driver.findElement(By.id("trTotalSum")).click();
-        driver.findElement(By.id("EditedCustomer_Totalsum")).clear();
-        driver.findElement(By.id("EditedCustomer_Totalsum")).sendKeys("5");
-        driver.findElement(By.id("btnAddUpdateCustomer")).click();
-        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-        Thread.sleep(5000);
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.name("ReportsSearchStartDate"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (driver.findElement(By.id("tblBSCustomers")).isDisplayed()) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(3000);
-        }
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (driver.findElement(By.id("numRecords")).isDisplayed()) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(3000);
-        }
-        Thread.sleep(6000);
-         /*
-            //MAKE A CREDIT CARD BILLING
+        /*
+        //MAKE A CREDIT CARD BILLING
         driver.findElement(By.id("BillingSystem")).click();
         Thread.sleep(6000);
         driver.findElement(By.id("BillingSysCard")).click();
@@ -920,9 +713,11 @@ public class Client9705 {
         driver.findElement(By.cssSelector("button.printExportButtons.Btn3"));
         driver.findElement(By.id("ShowUser")).click();
         Thread.sleep(4000);
+
+        WebDriverWait wait = new WebDriverWait(driver,60);
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("BillingSystem")));
         //BILLING: CREATE ORAT KEVA CLENT
-        driver.findElement(By.id("MenuActivties")).click();
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         driver.findElement(By.id("BillingSystem")).click();
         Thread.sleep(4000);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -991,12 +786,13 @@ public class Client9705 {
         driver.findElement(By.id("EditedCustomer_BankAccountNumber")).sendKeys("123456789");
         driver.findElement(By.id("accordionClientDetails3")).click();
         driver.findElement(By.id("EditedCustomer_FirstPayDate")).clear();
-        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("12/11/2019");
+        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("17/03/2020");
         driver.findElement(By.id("EditedCustomer_LastPayDate")).clear();
         driver.findElement(By.id("EditedCustomer_LastPayDate")).sendKeys("12/11/2020");
         driver.findElement(By.id("trTotalSum")).click();
         driver.findElement(By.id("EditedCustomer_Totalsum")).clear();
         driver.findElement(By.id("EditedCustomer_Totalsum")).sendKeys("33");
+        new Select(driver.findElement(By.id("EditedCustomerPayDay"))).selectByValue("17");
         driver.findElement(By.id("btnAddUpdateCustomer")).click();
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
         for (int second = 0; ; second++) {
@@ -1040,6 +836,7 @@ public class Client9705 {
             }
         }
         Thread.sleep(6000);
+        /*
         //Make ORAT KEVA BILLING
         driver.findElement(By.id("BillingSystem")).click();
         Thread.sleep(3000);
@@ -1061,6 +858,7 @@ public class Client9705 {
             Thread.sleep(1000);
         }
         Thread.sleep(3000);
+
         //BILLLING CREATE NEW INVOICE ONLY BILLING
         driver.findElement(By.id("BillingSystem")).click();
         Thread.sleep(3000);
@@ -1121,13 +919,13 @@ public class Client9705 {
         new Select(driver.findElement(By.id("EditedCustomerBType"))).selectByValue("3");
         driver.findElement(By.id("accordionClientDetails3")).click();
         driver.findElement(By.id("EditedCustomer_FirstPayDate")).clear();
-        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("12/11/2019");
+        driver.findElement(By.id("EditedCustomer_FirstPayDate")).sendKeys("17/03/2020");
         driver.findElement(By.id("EditedCustomer_LastPayDate")).clear();
         driver.findElement(By.id("EditedCustomer_LastPayDate")).sendKeys("12/11/2020");
         driver.findElement(By.id("trTotalSum")).click();
         driver.findElement(By.id("EditedCustomer_Totalsum")).clear();
         driver.findElement(By.id("EditedCustomer_Totalsum")).sendKeys("31");
-        new Select(driver.findElement(By.id("EditedCustomerPayDay"))).selectByValue("26");
+        new Select(driver.findElement(By.id("EditedCustomerPayDay"))).selectByValue("17");
         driver.findElement(By.id("btnAddUpdateCustomer")).click();
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
         for (int second = 0; ; second++) {
@@ -1162,6 +960,7 @@ public class Client9705 {
             }
             Thread.sleep(3000);
         }
+
         //SENT INVOICE BILLING
         driver.findElement(By.id("BillingSystem")).click();
         Thread.sleep(3000);
@@ -1179,10 +978,15 @@ public class Client9705 {
             Thread.sleep(3000);
         }
         Thread.sleep(6000);
+
+         //BILLING: ONE TIME CHARGE
         //BILLING: ONE TIME CHARGE
         driver.findElement(By.id("BillingSystem")).click();
         Thread.sleep(3000);
-        driver.findElement(By.id("BillingSysCard")).click();
+        driver.findElement(By.id("ReportsSearchStartDate")).click();
+        driver.findElement(By.id("ReportsSearchStartDate")).clear();
+        driver.findElement(By.id("ReportsSearchStartDate")).sendKeys("19/03/2020");
+        driver.findElement(By.id("btnSearch")).click();
         Thread.sleep(6000);
         driver.findElement(By.xpath("//button[@value='1']")).click();
         Thread.sleep(6000);
@@ -1206,15 +1010,8 @@ public class Client9705 {
         driver.findElement(By.cssSelector("[name=StatusType][value=\"Pass\"]")).click();
         driver.findElement(By.id("btnSubmit")).click();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.findElement(By.id("tblDeals_button1_5")).click();
+        driver.findElement(By.id("tblDeals_button1_0")).click();
         Thread.sleep(4000);
-        driver.findElement(By.id("ECInvoiceCustomerName")).clear();
-        driver.findElement(By.id("ECInvoiceCustomerName")).sendKeys("Yelena");
-        driver.findElement(By.id("ECInvoiceEMail")).clear();
-        driver.findElement(By.id("ECInvoiceEMail")).sendKeys("korsakovyelena@gmail.com");
-        driver.findElement(By.id("btnSubmit")).click();
-        Thread.sleep(4000);
-
           */
     }
 

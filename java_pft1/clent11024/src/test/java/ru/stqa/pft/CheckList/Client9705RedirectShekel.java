@@ -25,9 +25,7 @@ public class Client9705RedirectShekel {
 
     @Test
     public void testRedirect() throws Exception {
-        // driver.get("https://stage.e-c.co.il");
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("https://secure.e-c.co.il/Accounts/Login");
+        driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.findElement(By.id("LoginID")).click();
@@ -68,9 +66,11 @@ public class Client9705RedirectShekel {
         driver.findElement(By.id("RedirectNote")).click();
         driver.findElement(By.id("RedirectNote")).clear();
         driver.findElement(By.id("RedirectNote")).sendKeys("notes");
+        driver.findElement(By.id("RedirectURLTrue")).click();
+        driver.findElement(By.id("RedirectURLTrue")).clear();
+        driver.findElement(By.id("RedirectURLTrue")).sendKeys("https://www.google.com/");
         driver.findElement(By.id("CreateRedirectPaymentUrl")).click();
         Thread.sleep(4000);
-
     }
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {

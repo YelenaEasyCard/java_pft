@@ -19,14 +19,12 @@ public class Client9667RedirectShekel {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://stage.e-c.co.il";
+        baseUrl = "https://secure.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
     public void testRedirect() throws Exception {
-        // driver.get("https://stage.e-c.co.il");
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://secure.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -35,7 +33,7 @@ public class Client9667RedirectShekel {
         driver.findElement(By.id("LoginID")).sendKeys("9667");
         driver.findElement(By.id("Password")).click();
         driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("test12345");
+        driver.findElement(By.id("Password")).sendKeys("test123");
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("MenuActivties")).click();
@@ -70,6 +68,9 @@ public class Client9667RedirectShekel {
         driver.findElement(By.id("RedirectNote")).click();
         driver.findElement(By.id("RedirectNote")).clear();
         driver.findElement(By.id("RedirectNote")).sendKeys("notes");
+        driver.findElement(By.id("RedirectURLTrue")).click();
+        driver.findElement(By.id("RedirectURLTrue")).clear();
+        driver.findElement(By.id("RedirectURLTrue")).sendKeys("https://www.google.com/");
         driver.findElement(By.id("CreateRedirectPaymentUrl")).click();
     }
     @AfterClass(alwaysRun = true)

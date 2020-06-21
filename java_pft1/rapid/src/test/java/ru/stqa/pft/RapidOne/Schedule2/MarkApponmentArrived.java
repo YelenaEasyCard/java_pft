@@ -32,17 +32,9 @@ public class MarkApponmentArrived {
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("admin-2");
         driver.findElement(By.xpath("//input[@type='password']")).clear();
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Admin_123");
-        driver.findElement(By.id("login_btn")).click();
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (isElementPresent(By.cssSelector("div.title.no-burger.ng-binding"))) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(1000);
-        }
+        driver.findElement(By.cssSelector("button.login_btn.btn.ng-binding")).click();
         Thread.sleep(4000);
-        driver.get("https://roqa.rapid-image.net/schedule/shift-management-wizard");
+        /*driver.get("https://roqa.rapid-image.net/schedule/shift-management-wizard");
         Thread.sleep(3000);
         driver.get(" https://roqa.rapid-image.net/schedule");
         Thread.sleep(6000);
@@ -51,9 +43,10 @@ public class MarkApponmentArrived {
         driver.findElement(By.cssSelector("span.ng-binding.ng-scope")).click();
         //driver.findElement(By.cssSelector("span.input-group-addon.ng-scope.cursor-default > span.ng-binding.ng-scope")).click();
         Thread.sleep(4000);
+    */
+        Thread.sleep(4000);
     }
-
-    @AfterClass(alwaysRun = true)
+        @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
