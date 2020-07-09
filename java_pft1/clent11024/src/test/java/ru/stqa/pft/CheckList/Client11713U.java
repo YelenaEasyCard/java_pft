@@ -108,7 +108,7 @@ public class Client11713U {
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("5521771900043717=22032011223727441000");
+        driver.findElement(By.id("CardNumber")).sendKeys("5521771900043717=22032011223727441000?");
         new Select(driver.findElement(By.id("Code"))).selectByValue("00");
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
