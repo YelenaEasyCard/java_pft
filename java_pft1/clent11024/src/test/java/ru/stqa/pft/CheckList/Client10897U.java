@@ -75,6 +75,7 @@ public class Client10897U {
 
     @Test
     public void testCheckList() throws Exception {
+       /*
         //LoginEmployerLogout
         driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -90,6 +91,7 @@ public class Client10897U {
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("a.ExitIcon.Icons")).click();
+        */
         //LoginManager
         driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -104,7 +106,8 @@ public class Client10897U {
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(4000);
-        //DEAL CARD READER / SHEKEL
+       /*
+       //DEAL CARD READER / SHEKEL
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
@@ -136,6 +139,7 @@ public class Client10897U {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
+      */
         //DEAL CARD READER / DOLLAR
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();

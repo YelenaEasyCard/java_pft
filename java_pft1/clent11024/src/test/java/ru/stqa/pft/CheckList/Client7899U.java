@@ -64,9 +64,8 @@ public class Client7899U {
 
     @Test
     public void testCheckList() throws Exception {
-       /*
-        //LoginEmployerLogout
-        driver.get("https://stage.e-c.co.il/Accounts/Login");
+         //LoginEmployerLogout
+        driver.get("https://secure.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -76,12 +75,11 @@ public class Client7899U {
         driver.findElement(By.id("LoginID")).sendKeys("7899");
         driver.findElement(By.id("Password")).click();
         driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("test1234");
+        driver.findElement(By.id("Password")).sendKeys("test123456");
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("a.ExitIcon.Icons")).click();
-              */
-        //LoginManager
+                //LoginManager
         driver.get("https://secure.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("MangerUser")).click();
