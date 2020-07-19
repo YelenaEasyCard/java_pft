@@ -1,0 +1,3915 @@
+{
+	"info": {
+		"_postman_id": "d0a6c502-5535-436d-b870-a88408914c6e",
+		"name": "ECNG copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Scenario",
+			"item": [
+				{
+					"name": "Get Management Token Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "23b384f2-6fac-48fa-b27c-4f4b208d2c90",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Ensure access_token present\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(jsonData.access_token).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"ManagementAccessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "management_api",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "yuwsCT8cbJVgw2W6",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{IdentityServerAddress}}/connect/token",
+							"host": [
+								"{{IdentityServerAddress}}"
+							],
+							"path": [
+								"connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Merchant Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0cc7c0e0-1eff-4e56-9ec9-9f283e446edc",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.test(\"Ensure Location header present\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    pm.expect(newObjectLocation).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"NewMerchantLocation\", newObjectLocation);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"MerchantID\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessName\": \"Merchant {{$randomInt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Terminal Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1991c91-8b46-4920-a50c-988e37eaea27",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.test(\"Ensure Location header present\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    pm.expect(newObjectLocation).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"NewTerminalLocation\", newObjectLocation);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"TerminalID\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"merchantID\": \"{{MerchantID}}\",\r\n   \"label\": \"Terminal {{$randomInt}}\",\r\n   \"settings\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Terminal External Aggregator Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ca5d5b2-c63a-4286-8b49-dd799ea9bf9a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalSystemID\": 10,\r\n  \"settings\": {\r\n    \"merchantReference\": \"{{ClearingHouseMerchantReference}}\",\r\n    \"shvaTerminalReference\":\"0882021014\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}/externalsystem",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}",
+								"externalsystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Terminal External Processor Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ee56b61d-7951-4711-95ad-8ff3aeaf9b3a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalSystemID\": 20,\r\n   \"settings\": { \"merchantNumber\": \"0882021014\",\r\n\"userName\": \"ABLCH\",\r\n\"password\" : \"E9900C\"}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}/externalsystem",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}",
+								"externalsystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Terminal APKey",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "028f1fc8-b04b-4d1c-9adc-0e57a4ee49f9",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.collectionVariables.set(\"TerminalApiKey\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}/resetApiKey",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}",
+								"resetApiKey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminal Access Token Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b9bd3118-775d-47e7-ac98-eb523de8cd42",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Ensure access_token present\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(jsonData.access_token).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"TerminalAccessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "terminal",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "terminal_rest_api",
+									"type": "text"
+								},
+								{
+									"key": "authorizationKey",
+									"value": "{{TerminalApiKey}}",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{IdentityServerAddress}}/connect/token",
+							"host": [
+								"{{IdentityServerAddress}}"
+							],
+							"path": [
+								"connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction Standard",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "816a5b76-250c-434e-8a8e-c72cfc9fda71",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"306\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \";5521771900043717=22032011223727441000?\"\r\n  },\r\n   \"transactionAmount\": 9.25,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Merchant",
+			"item": [
+				{
+					"name": "Get Management Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bff2a2d7-9f8c-4f0e-8dfb-93199e06ae15",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Ensure access_token present\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(jsonData.access_token).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"ManagementAccessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "management_api",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "yuwsCT8cbJVgw2W6",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{IdentityServerAddress}}/connect/token",
+							"host": [
+								"{{IdentityServerAddress}}"
+							],
+							"path": [
+								"connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Merchant",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0ca62ede-f4fb-4097-bb07-504eb8e4cb58",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.test(\"Ensure Location header present\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    pm.expect(newObjectLocation).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"NewMerchantLocation\", newObjectLocation);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"MerchantID\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessName\": \"Merchant {{$randomInt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Merchant",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fd5f86df-aee2-458a-82c5-917e7063ca47",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.test(\"Ensure Location header present\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(newObjectLocation).eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"NewMerchantLocation\", newObjectLocation);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"MerchantID\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessName\": \"New test\",\r\n  \"marketingName\": \"yelena mark\",\r\n  \"businessID\": \"321758104\",\r\n  \"contactPerson\": \"Lenenak\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant/{{MerchantID}}",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant",
+								"{{MerchantID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Merchant",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant/{{MerchantID}}",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant",
+								"{{MerchantID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Merchant bussinessName/marketingName/bussinessID/contactPerson",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d0e7d941-f136-4d68-9822-c3d0b94f70aa",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.test(\"Ensure Location header present\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    pm.expect(newObjectLocation).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"NewMerchantLocation\", newObjectLocation);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"MerchantID\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessName\": \"BusinessName\",\r\n  \"marketingName\": \"marketingName\",\r\n  \"businessID\": \"348658899\",\r\n  \"contactPerson\": \"ContactPerson\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Terminal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6cda8c88-c5ee-4a07-8ec7-78cfea621807",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.test(\"Ensure Location header present\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    pm.expect(newObjectLocation).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"NewTerminalLocation\", newObjectLocation);",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"TerminalID\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"merchantID\": \"{{MerchantID}}\",\r\n   \"label\": \"Terminal {{$randomInt}}\",\r\n   \"settings\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c029278-e12c-42b2-ab00-9594d6653bea",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminals",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9de53b72-c1b4-4270-86c2-970bfc633817",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Merchants",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f92226c6-6edc-42a8-8675-59a1ac58d113",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.test(\"Ensure Location header present\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(newObjectLocation).eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"NewMerchantLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"merchantID\": 0,\r\n  \"label\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Merchant By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant/ca6d876e-7530-46eb-a55e-abd700a9b802",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant",
+								"ca6d876e-7530-46eb-a55e-abd700a9b802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Merchant history by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant/{{MerchantID}}/history",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant",
+								"{{MerchantID}}",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Merchant by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant/ca6d876e-7530-46eb-a55e-abd700a9b802",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant",
+								"ca6d876e-7530-46eb-a55e-abd700a9b802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminal by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e4fc19fd-110e-42c9-874b-bacb7b95b713",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/fd483f66-7cf0-4e57-8661-ab9200804615",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"fd483f66-7cf0-4e57-8661-ab9200804615"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Terminal by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc56ab56-0a87-4ddb-b3e8-890049dcffb0",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"Terminal 14\",\r\n  \"settings\": {\r\n    \"minInstallments\": 2,\r\n    \"redirectPageSettings\": {\r\n      \"additionalProp1\": [\r\n        null\r\n      ],\r\n      \"additionalProp2\": [\r\n        null\r\n      ],\r\n      \"additionalProp3\": [\r\n        null\r\n      ]\r\n    },\r\n    \"paymentButtonSettings\": {\r\n      \"additionalProp1\": [\r\n        null\r\n      ],\r\n      \"additionalProp2\": [\r\n        null\r\n      ],\r\n      \"additionalProp3\": [\r\n        null\r\n      ]\r\n    },\r\n    \"maxInstallments\": 12,\r\n    \"minCreditInstallments\": 3,\r\n    \"maxCreditInstallments\": 36,\r\n    \"enableDeletionOfUntransmittedTransactions\": true,\r\n    \"nationalIDRequired\": true,\r\n    \"cvvRequired\": true,\r\n    \"j2Allowed\": true,\r\n    \"j5Allowed\": true\r\n  },\r\n  \"billingSettings\": {\r\n    \"billingNotificationsEmails\": [\r\n    null\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/7b983367-d0ee-4834-b7ac-abd70097deca",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"7b983367-d0ee-4834-b7ac-abd70097deca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Terminal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8effce53-fb67-4974-804c-d9c025da6aa7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"Terminal 640\",\r\n  \"settings\": {\r\n    \"minInstallments\": 2,\r\n    \"redirectPageSettings\": {\r\n      \"additionalProp1\": [\r\n        null\r\n      ],\r\n      \"additionalProp2\": [\r\n        null\r\n      ],\r\n      \"additionalProp3\": [\r\n        null\r\n      ]\r\n    },\r\n    \"paymentButtonSettings\": {\r\n      \"additionalProp1\": [\r\n        null\r\n      ],\r\n      \"additionalProp2\": [\r\n        null\r\n      ],\r\n      \"additionalProp3\": [\r\n        null\r\n      ]\r\n    },\r\n    \"maxInstallments\": 12,\r\n    \"minCreditInstallments\": 3,\r\n    \"maxCreditInstallments\": 36,\r\n    \"enableDeletionOfUntransmittedTransactions\": true,\r\n    \"nationalIDRequired\": true,\r\n    \"cvvRequired\": true,\r\n    \"j2Allowed\": true,\r\n    \"j5Allowed\": true\r\n  },\r\n  \"billingSettings\": {\r\n    \"billingNotificationsEmails\": [\r\n    null\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminal Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c005481-4f1e-4778-8b1d-b700821349a5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Terminal external system",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1a644f54-d98f-4b7c-971a-e28ef46ab8e1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalSystemID\": 2,\r\n   \"settings\": { \"merchantNumber\": \"0882021014\",\r\n\"userName\": \"ABLCH\",\r\n\"password\" : \"E9900C\"}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}/externalsystem",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}",
+								"externalsystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Terminal External Aggregator",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f2c6cb4-47e5-4fe8-8bd1-f25682485bbe",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalSystemID\": 3,\r\n  \"settings\": {\r\n    \"merchantReference\": \"{{ClearingHouseMerchantReference}}\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/{{TerminalID}}/externalsystem",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"{{TerminalID}}",
+								"externalsystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Terminal External AggregatorByTerminalID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6b54e9ad-f570-4a73-85cb-0033b1ca5ef5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalSystemID\": 2,\r\n  \"settings\": {\r\n    \"merchantReference\": \"5eb62fca-a37b-4192-b7f1-e75784561682\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/fd483f66-7cf0-4e57-8661-ab9200804615/externalsystem",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"fd483f66-7cf0-4e57-8661-ab9200804615",
+								"externalsystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Terminal External Processor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "71db0560-ed2d-4750-bca0-693a6bb00773",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalSystemID\": 2,\r\n   \"settings\": { \"merchantNumber\": \"0882021014\",\r\n\"userName\": \"ABLCH\",\r\n\"password\" : \"E9900C\"}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/fd483f66-7cf0-4e57-8661-ab9200804615/externalsystem",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"fd483f66-7cf0-4e57-8661-ab9200804615",
+								"externalsystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dictionary external system",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d6d1b44-1b9b-4960-9754-22585f1d0f30",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/dictionaries/externalsystems",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"dictionaries",
+								"externalsystems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dictionares",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fdb64005-e2c8-4455-bd1b-b95937599bb0",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/dictionaries?language=Eng",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"dictionaries"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "Eng"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Get Terminal Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "475ce595-6ff0-4939-9d78-e5be98ba11c4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Ensure access_token present\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(jsonData.access_token).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"TerminalAccessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "terminal",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "terminal_rest_api",
+									"type": "text"
+								},
+								{
+									"key": "authorizationKey",
+									"value": "{{TerminalApiKey}}",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{IdentityServerAddress}}/connect/token",
+							"host": [
+								"{{IdentityServerAddress}}"
+							],
+							"path": [
+								"connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CardToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "085fec6b-e1e3-4fe9-bf62-4e007e1e4bf7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"consumerID\": \"{{TerminalID}}\",\r\n  \"consumerEmail\": \"korsakovyelena@gmail.com\",\r\n  \"cvv\": \"095\",\r\n  \"authNum\": \"\",\r\n  \"cardNumber\": \"5521771900043717\",\r\n  \"cardExpiration\": \"03/22\",\r\n  \"cardVendor\": \"Visa\",\r\n  \"cardOwnerName\": \"Yel\",\r\n  \"cardOwnerNationalID\": \"122222227\",\r\n  \"cardReaderInput\": \";5521771900043717=22032011223727441000?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CardToken by Terminal ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb6181bd-5fca-4296-bc11-03bef9d4cc67",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens/?TerminalID={{TerminalID}}",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens",
+								""
+							],
+							"query": [
+								{
+									"key": "TerminalID",
+									"value": "{{TerminalID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CardToken by Terminal ID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "97276446-b85a-4a18-aa72-b9208d7da17c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens/?TerminalID={{TerminalID}}",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens",
+								""
+							],
+							"query": [
+								{
+									"key": "TerminalID",
+									"value": "{{TerminalID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CardToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38caacaa-bcf8-444a-a558-b2b9e62e8563",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction Card Reader",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c06ebd24-4dad-4460-b4cc-d4247f98b765",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"306\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \";5521771900043717=22032011223727441000?\"\r\n  },\r\n   \"transactionAmount\": 15,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction ILS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f8a3a76f-786b-4243-8c1a-3cc6ac059619",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"095\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \"\"\r\n  },\r\n   \"transactionAmount\": 5,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction $",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "904fa4dc-b0f9-4643-85a6-2be67f41abe9",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"USD\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"306\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \"\"\r\n  },\r\n   \"transactionAmount\": 1.84,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction EURO",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7f93dbe6-5d55-4f1c-b84d-e06ec5629fb9",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"EUR\",\r\n   \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"306\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \"\"\r\n  },\r\n   \"transactionAmount\": 2.94,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction J5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ee95ac4f-75d4-4cab-a552-78965df03e7f",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"424\",\r\n    \"cardNumber\": \"375510190000062\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"348658899\"\r\n  },\r\n  \"transactionAmount\": 2.15,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"Deal in ILS\",\r\n    \"consumerEmail\": \"korsakovyelena@gmail.com\",\r\n    \"consumerPhone\": \"0585456911\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/blocking",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"blocking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction J2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2b9b23cc-9f79-444f-9b5c-555a77a355de",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"095\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\"\r\n  },\r\n  \"transactionAmount\": 3,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/checking",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"checking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refund",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"Refund\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"095\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/21\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\"\r\n  },\r\n  \"transactionAmount\": 5,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/refund",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction with Insatalment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aac0e6b6-ece7-4470-80f1-5c57b1f382f1",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction with Credit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6025157c-a61f-436f-9ce6-2f16a49c2afa",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"credit\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"823\",\r\n    \"cardNumber\": \"4580121980009223\",\r\n    \"cardExpiration\": \"03/21\",\r\n    \"cardOwnerName\": \"Yelena\",\r\n    \"cardOwnerNationalID\": \"348658899\"\r\n  },\r\n  \"transactionAmount\": 300,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"Deal with payment\",\r\n    \"consumerEmail\": \"korsakovyelena@gmail.com\",\r\n    \"consumerPhone\": \"0585456911\"\r\n  },\r\n  \"installmentDetails\":{\r\n\"transactionAmount\": 300,\r\n\"initialPaymentAmount\": 300,\r\n\"totalAmount\": 300,\r\n \"numberOfPayments\": 3\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{NewTransactionLocation}}",
+							"host": [
+								"{{NewTransactionLocation}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transaction Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ecng-transactions.azurewebsites.net/api/transactions/0300be2f-5970-43ee-be80-abfb0081a8f8",
+							"protocol": "https",
+							"host": [
+								"ecng-transactions",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"0300be2f-5970-43ee-be80-abfb0081a8f8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Credit Card Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d80f1467-4f6c-4743-a268-68affca9f0c3",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.collectionVariables.set(\"CreditCardToken\", jsonData.entityReference);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cvv\": \"095\",\r\n  \"cardNumber\": \"5521771900043717\",\r\n  \"cardExpiration\": {\r\n    \"year\": 22,\r\n    \"month\": 03\r\n  },\r\n  \"terminalID\" : \"{{TerminalID}}\",\r\n  \"cardOwnerNationalID\" : \"122222227\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction with token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e8701ea-d7b4-4d5b-9a9c-e01c2d1d5aab",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardToken\": \"{{CreditCardToken}}\",\r\n  \"transactionAmount\": 2,\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"deal with token\",\r\n    \"consumerEmail\": \"korsakovyelena@gmail.com\",\r\n    \"consumerPhone\": \"0585456911\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transactions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transaction by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/d00bdcc3-150f-45fd-8c13-abfd00a7116b",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"d00bdcc3-150f-45fd-8c13-abfd00a7116b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transaction history by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/d00bdcc3-150f-45fd-8c13-abfd00a7116b/history",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"d00bdcc3-150f-45fd-8c13-abfd00a7116b",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Identity UserApi",
+			"item": [
+				{
+					"name": "Invite User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ManagementAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"merchantID\": \"fd483f66-7cf0-4e57-8661-ab9200804615\",\r\n  \"terminalID\": \"632eb049-8562-411d-ab9f-ab92007f0293\",\r\n  \"inviteMessage\": \"Welcome to ECNG\",\r\n  \"email\": \"korsakovyelena@gmail.com\",\r\n  \"roles\": [\r\n    \"BillingAdmin\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/user/invite",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"invite"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tools",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Transmission",
+			"item": [
+				{
+					"name": "Get Transmission",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transmission?{{TerminalID}}",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transmission"
+							],
+							"query": [
+								{
+									"key": "{{TerminalID}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transmit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"paymentTransactionIDs\": [\r\n    \"479347a5-4358-463b-b6a8-abfb008491cd\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transmission/transmit",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transmission",
+								"transmit"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transmission cancel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"terminalID\": \"{{TerminalID}}\",\r\n  \"paymentTransactionID\": \"7f730c74-cc2b-43e7-ae90-abfb00885896\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transmission/cancel",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transmission",
+								"cancel"
+							],
+							"query": [
+								{
+									"key": "{{TerminalID}}",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Dictionares",
+			"item": [
+				{
+					"name": "Get dictionaries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/dictionaries/transaction",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"dictionaries",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SystemLogApi",
+			"item": [
+				{
+					"name": "SystemLog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/system?correlationId=80002198-0000-e900-b63f-84710c7967bb",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"system"
+							],
+							"query": [
+								{
+									"key": "correlationId",
+									"value": "80002198-0000-e900-b63f-84710c7967bb"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Functionality for old clients, terminal, user ",
+			"item": [
+				{
+					"name": "Get Management Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d039431a-a0d7-48d3-8d56-2da9f4ffae06",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Ensure access_token present\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(jsonData.access_token).not.eql(undefined);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"ManagementAccessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "management_api",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "yuwsCT8cbJVgw2W6",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{IdentityServerAddress}}/connect/token",
+							"host": [
+								"{{IdentityServerAddress}}"
+							],
+							"path": [
+								"connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Merchant",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/merchant/0b7136e6-6056-47b0-b36b-abfd007b9073",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"merchant",
+								"0b7136e6-6056-47b0-b36b-abfd007b9073"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminal by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "49eaf34b-a3ed-4492-8bac-906aafa34ab1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/05722748-09a6-43f5-b065-abfd007bd338",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"05722748-09a6-43f5-b065-abfd007bd338"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Terminal by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "627c1085-de28-4b5f-b563-67d0721364c3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{ManagementAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"Terminal 140\",\r\n  \"settings\": {\r\n    \"minInstallments\": 2,\r\n    \"redirectPageSettings\": {\r\n      \"additionalProp1\": [\r\n        null\r\n      ],\r\n      \"additionalProp2\": [\r\n        null\r\n      ],\r\n      \"additionalProp3\": [\r\n        null\r\n      ]\r\n    },\r\n    \"paymentButtonSettings\": {\r\n      \"additionalProp1\": [\r\n        null\r\n      ],\r\n      \"additionalProp2\": [\r\n        null\r\n      ],\r\n      \"additionalProp3\": [\r\n        null\r\n      ]\r\n    },\r\n    \"maxInstallments\": 12,\r\n    \"minCreditInstallments\": 3,\r\n    \"maxCreditInstallments\": 36,\r\n    \"enableDeletionOfUntransmittedTransactions\": true,\r\n    \"nationalIDRequired\": true,\r\n    \"cvvRequired\": false,\r\n    \"j2Allowed\": true,\r\n    \"j5Allowed\": true\r\n  },\r\n  \"billingSettings\": {\r\n    \"billingNotificationsEmails\": [\r\n    null\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MerchantApiAddress}}/api/terminals/05722748-09a6-43f5-b065-abfd007bd338",
+							"host": [
+								"{{MerchantApiAddress}}"
+							],
+							"path": [
+								"api",
+								"terminals",
+								"05722748-09a6-43f5-b065-abfd007bd338"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction by Terminal ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c26f6924-f375-44d4-bcbe-0aad519c64d1",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"424\",\r\n    \"cardNumber\": \"375510190000062\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"348658899\",\r\n   \"cardReaderInput\": \";375510190000062=220320119032059212200?\"\r\n  },\r\n   \"transactionAmount\": 1.45,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create CardToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7882a284-36eb-4ade-8529-3c7de6a9154b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"consumerID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"consumerEmail\": \"korsakovyelena@gmail.com\",\r\n  \"cvv\": \"095\",\r\n  \"authNum\": \"\",\r\n  \"cardNumber\": \"5521771900043717\",\r\n  \"cardExpiration\": \"03/22\",\r\n  \"cardVendor\": \"Visa\",\r\n  \"cardOwnerName\": \"Yel\",\r\n  \"cardOwnerNationalID\": \"122222227\",\r\n  \"cardReaderInput\": \";5521771900043717=22032011223727441000?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction with Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05a8ff1a-9c60-4efd-a77e-1375e5337dda",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CardToken by Deal reference",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0ba02a0f-c05a-4142-9dc8-7616bf3158cc",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens?entityReference=ada982c0-d186-49db-8368-abfd00ae0e2c",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens"
+							],
+							"query": [
+								{
+									"key": "entityReference",
+									"value": "ada982c0-d186-49db-8368-abfd00ae0e2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CardToken by terminal ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bbf631a6-ac96-4b43-8c00-9cf0aacf680e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/cardtokens?terminalID=05722748-09a6-43f5-b065-abfd007bd338",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"cardtokens"
+							],
+							"query": [
+								{
+									"key": "terminalID",
+									"value": "05722748-09a6-43f5-b065-abfd007bd338"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction CardReader (regular)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "49abb68e-a52c-46ef-9da1-0b5483f84d70",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"306\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \";5521771900043717=22032011223727441000?\"\r\n  },\r\n   \"transactionAmount\": 12,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction ILS Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "63704d11-0e66-4489-8d20-f3e807e3ab0a",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"095\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \"\"\r\n  },\r\n   \"transactionAmount\": 5,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction $ Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dedf08b6-9c1f-46e9-9a8c-b92cb41d215d",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"USD\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"306\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \"\"\r\n  },\r\n   \"transactionAmount\": 1.84,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction EURO Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4a673aea-2c21-4ffe-8148-c09da401dc24",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"EUR\",\r\n   \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"306\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\",\r\n   \"cardReaderInput\": \"\"\r\n  },\r\n   \"transactionAmount\": 2.94,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction J5 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "59ea73cb-ee52-44e0-bfed-ddd1e26e17e8",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"424\",\r\n    \"cardNumber\": \"375510190000062\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"348658899\"\r\n  },\r\n  \"transactionAmount\": 2.15,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"Deal in ILS\",\r\n    \"consumerEmail\": \"korsakovyelena@gmail.com\",\r\n    \"consumerPhone\": \"0585456911\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/blocking",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"blocking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction J2 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2c9392ae-9a28-4b44-bc2b-d2fc7263e10d",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"regularDeal\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"095\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/22\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\"\r\n  },\r\n  \"transactionAmount\": 3,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/checking",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"checking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refund Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"Refund\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"095\",\r\n    \"cardNumber\": \"5521771900043717\",\r\n    \"cardExpiration\": \"03/21\",\r\n    \"cardOwnerName\": \"John Smith\",\r\n    \"cardOwnerNationalID\": \"122222227\"\r\n  },\r\n  \"transactionAmount\": 5,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"\",\r\n    \"dealDescription\": \"some product pack: 3kg.\",\r\n    \"consumerEmail\": \"email@example.com\",\r\n    \"consumerPhone\": \"555-765\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/refund",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction with Insatalment Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "82b9577f-33bc-4f96-ab63-c684e392a7df",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction with Credit Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8be42f41-8a5e-4193-9532-2216e2d7a695",
+								"exec": [
+									"var newObjectLocation = pm.response.headers.get(\"Location\")",
+									"",
+									"pm.collectionVariables.set(\"NewTransactionLocation\", newObjectLocation);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transactionType\": \"credit\",\r\n  \"currency\": \"ILS\",\r\n  \"cardPresence\": \"CardNotPresent\",\r\n  \"creditCardSecureDetails\": {\r\n    \"cvv\": \"823\",\r\n    \"cardNumber\": \"4580121980009223\",\r\n    \"cardExpiration\": \"03/21\",\r\n    \"cardOwnerName\": \"Yelena\",\r\n    \"cardOwnerNationalID\": \"348658899\"\r\n  },\r\n  \"transactionAmount\": 300,\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"dealDetails\": {\r\n    \"dealReference\": \"123456\",\r\n    \"dealDescription\": \"Deal with payment\",\r\n    \"consumerEmail\": \"korsakovyelena@gmail.com\",\r\n    \"consumerPhone\": \"0585456911\"\r\n  },\r\n  \"installmentDetails\":{\r\n\"transactionAmount\": 300,\r\n\"initialPaymentAmount\": 300,\r\n\"totalAmount\": 300,\r\n \"numberOfPayments\": 3\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/create",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transaction by ID Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TerminalAccessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/abc48291-7b81-476f-bec7-abfd00b38413",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"abc48291-7b81-476f-bec7-abfd00b38413"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transaction history by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transactions/71367fd1-ed63-49f6-9329-abfd00afb240/history",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"71367fd1-ed63-49f6-9329-abfd00afb240",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transmission Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transmission?terminalID=05722748-09a6-43f5-b065-abfd007bd338",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transmission"
+							],
+							"query": [
+								{
+									"key": "terminalID",
+									"value": "05722748-09a6-43f5-b065-abfd007bd338"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transmit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"paymentTransactionIDs\": \"65b0bbb5-0175-4e08-9645-abfd00b3e9b2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transmission/transmit",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transmission",
+								"transmit"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transmission cancel Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{TerminalAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"terminalID\": \"05722748-09a6-43f5-b065-abfd007bd338\",\r\n  \"paymentTransactionID\": \"abc48291-7b81-476f-bec7-abfd00b38413\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TransactionsApiAddress}}/api/transmission/cancel",
+							"host": [
+								"{{TransactionsApiAddress}}"
+							],
+							"path": [
+								"api",
+								"transmission",
+								"cancel"
+							],
+							"query": [
+								{
+									"key": "{{TerminalID}}",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1efa302d-939c-4492-8ecf-aa92eb5c1139",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0b3b6432-7063-4ca8-bfd1-e315c0400f57",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c991ef44-d828-43e4-af54-2811602f656f",
+			"key": "TerminalAccessToken",
+			"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjlBRENCOTkxMzhFQzI0QzIzNjNBQkE4OEIzOEJGQkIyIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE1OTUxNDM5ODQsImV4cCI6MTU5NTIzMDM4NCwiaXNzIjoiaHR0cHM6Ly9lY25nLWlkZW50aXR5LmF6dXJld2Vic2l0ZXMubmV0IiwiY2xpZW50X2lkIjoidGVybWluYWwiLCJzdWIiOiJiZDI0NmY5NC1lYjViLTQ3NDUtOTU3Yy01NjNmZTVlN2YwNTEiLCJhdXRoX3RpbWUiOjE1OTUxNDM5ODQsImlkcCI6ImxvY2FsIiwiZXh0ZW5zaW9uX1Rlcm1pbmFsSUQiOiIwNTcyMjc0OC0wOWE2LTQzZjUtYjA2NS1hYmZkMDA3YmQzMzgiLCJleHRlbnNpb25fTWVyY2hhbnRJRCI6IjBiNzEzNmU2LTYwNTYtNDdiMC1iMzZiLWFiZmQwMDdiOTA3MyIsIm5hbWUiOiJ0ZXJtaW5hbF8wNTcyMjc0OC0wOWE2LTQzZjUtYjA2NS1hYmZkMDA3YmQzMzgiLCJqdGkiOiI5MkI0RUUxQ0VCQkNBMEU0NEUwMTgyRENCRDhDMjM1OCIsImlhdCI6MTU5NTE0Mzk4NCwic2NvcGUiOlsidHJhbnNhY3Rpb25zX2FwaSJdLCJhbXIiOlsidGVybWluYWxfcmVzdF9hcGkiXX0.uUBmEcXLBPm4t4FHXahwbywM6Yy8dpEVjqQzb7hFHvOSuaz0WqLjH4slKMU2jwv4XcI4177_OrmYeB8JfbeJhiXJRgEVvu7_q5myRL9Moc67_2pxjxZkHyTB20R419bO0fTJSJMebMcWEG21XDsbX7NMwP3sdq86Z8pNLsDT3KfFPC-kn65dZlw0-_Ov95XAxbW4XnrpuHoY77BsEIvWdk0iPpwGuFgY0MJfL8Z0FPhPOaa1Llr9BVCJCCdWqgr0ly04fwWRrPbFXn2yBgnKSHv8NZ_conPxFlm3QilYmxHCnuRPcW-NO73BRz3ocuUap4cV3oCH7diuPH35A-J0Ug"
+		},
+		{
+			"id": "9d46c7fe-35c9-49ac-9ead-eaa2c0930e39",
+			"key": "NewMerchantLocation",
+			"value": "https://ecng-merchants.azurewebsites.net/api/merchant/0b7136e6-6056-47b0-b36b-abfd007b9073"
+		},
+		{
+			"id": "94acceab-ef5e-4729-8485-7ae52ebad400",
+			"key": "NewTerminalLocation",
+			"value": "https://ecng-merchants.azurewebsites.net/api/terminals/05722748-09a6-43f5-b065-abfd007bd338"
+		},
+		{
+			"id": "1e518ef6-8ceb-4784-91a6-bbb9b6ebd7b6",
+			"key": "ManagementAccessToken",
+			"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjlBRENCOTkxMzhFQzI0QzIzNjNBQkE4OEIzOEJGQkIyIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE1OTUxNDM3MjUsImV4cCI6MTU5NTIzMDEyNSwiaXNzIjoiaHR0cHM6Ly9lY25nLWlkZW50aXR5LmF6dXJld2Vic2l0ZXMubmV0IiwiY2xpZW50X2lkIjoibWFuYWdlbWVudF9hcGkiLCJqdGkiOiI2RjRENDQzOTI2MjU1QjgwNEZCRUIwRUQyODZBMjgwRiIsImlhdCI6MTU5NTE0MzcyNSwic2NvcGUiOlsibWFuYWdlbWVudF9hcGkiLCJtZXJjaGFudHNfYXBpIl19.j5Igfm1ZVVPqQ8dHUcOChp4_bU6aX9WTRwRrspEC_gaLI7JhNHpOB5kGqUcau9ZvtcQQDO2Jmi3ZaTcVU1RrzM147M94GwLvf6rg7NvH5BTn9I3G1X01gGH9odSS85KesV5erbozpXs_xY3A8HZBCEk_ak7EHKwdbkhIa8sfQRTguPTCKYghoe5uWvtbAKpY0HebMaNnVBr1-0-IT-9MqAu7b78dmH0i_BxHBNIqGBybCxLA5Qovu1srlik0IboPJExznjhBIge-6ce7p7tVHWg9fN4UoUDjUkRNG0HbVJVg_E8zIqrIXGobe06A6H6OZz-nfwQFPEQpAI_4H5DIjg"
+		},
+		{
+			"id": "88b077c6-4735-4681-8e9c-64cd9a664063",
+			"key": "MerchantFrontendAccessToken",
+			"value": ""
+		},
+		{
+			"id": "c4fd5a78-a77f-4d9b-a1a3-c56aca2c57bd",
+			"key": "MerchantID",
+			"value": "0b7136e6-6056-47b0-b36b-abfd007b9073"
+		},
+		{
+			"id": "667ec271-8e85-42d0-a915-0186c0216a93",
+			"key": "TerminalID",
+			"value": "05722748-09a6-43f5-b065-abfd007bd338"
+		},
+		{
+			"id": "b8b023e1-469a-46cd-b868-0a5440495662",
+			"key": "TerminalApiKey",
+			"value": "hsGxueUIqT4ae9nJG5Uxw8GW2OWBeZVIeFWqnri3zOSJFIynlPPHdhJ0cgjEhWmVWoUGBeS2hhG/rkZC2P3x7g=="
+		},
+		{
+			"id": "5d6c2d56-807f-4661-9386-5524009e4713",
+			"key": "ClearingHouseMerchantReference",
+			"value": "5eb62fca-a37b-4192-b7f1-e75784561682"
+		},
+		{
+			"id": "8dc54f62-d8a3-4b64-937a-aefa9fd2bcd7",
+			"key": "CreditCardToken",
+			"value": "a8ceeaf0-e592-47f4-960e-abd400cf51c3"
+		},
+		{
+			"id": "85bdd1a6-5667-4018-8672-99ee482cc298",
+			"key": "NewTransactionLocation",
+			"value": "https://ecng-transactions.azurewebsites.net/api/transactions/65b0bbb5-0175-4e08-9645-abfd00b3e9b2"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
