@@ -104,7 +104,7 @@ public class Client11713U {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(4000);
              Thread.sleep(4000);
-        //DEAL CARD READER / SHEKEL
+          /*   //DEAL CARD READER / SHEKEL
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
@@ -274,6 +274,7 @@ public class Client11713U {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
+       */
         // DEAL WITH INVOICE
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
