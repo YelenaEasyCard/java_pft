@@ -3,7 +3,7 @@
 LoginEmployerLogout
 LoginManagerLogout
 
-Deals:
+Deals: 12
 Card Reader /Shekel
 Card Reader /Dollar
 Phone /Shekel
@@ -12,6 +12,8 @@ Signiture / Shekel
 Signiture / Dollar
 Refund / Phone
 Payments / Card Reader
+Payments /Phone
+Payments /Signiture
 Credit / Signiture
 Deal with invoice
 
@@ -68,7 +70,7 @@ public class Client9667U {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://secure.e-c.co.il";
+        baseUrl = "https://stage.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -103,7 +105,7 @@ public class Client9667U {
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(4000);
-              //DEAL CARD READER / SHEKEL
+           //DEAL CARD READER / SHEKEL
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
@@ -310,8 +312,8 @@ public class Client9667U {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-        // PAYMENT WITH CARD READER
-        driver.findElement(By.id("MenuActivties")).click();
+               // PAYMENT WITH CARD READER
+            driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
         driver.findElement(By.id("CardNumber")).sendKeys("4580031900109146=22032011022021711001");
@@ -338,6 +340,76 @@ public class Client9667U {
         driver.findElement(By.id("FirstPay")).click();
         driver.findElement(By.id("FirstPay")).clear();
         driver.findElement(By.id("FirstPay")).sendKeys("2");
+        driver.findElement(By.id("btnSubmit")).click();
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.findElement(By.id("btnMail")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.id("MenuActivties")).click();
+        //PAYMENTS WITH PHONE
+        driver.findElement(By.id("MenuActivties")).click();
+        driver.findElement(By.id("CardNumber")).click();
+        driver.findElement(By.id("CardNumber")).clear();
+        driver.findElement(By.id("CardNumber")).sendKeys("4580000000000000");
+        new Select(driver.findElement(By.id("Code"))).selectByValue("50");
+        new Select(driver.findElement(By.id("Month2"))).selectByValue("03");
+        new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2021");
+        driver.findElement(By.id("Sum")).click();
+        driver.findElement(By.id("Sum")).clear();
+        driver.findElement(By.id("Sum")).sendKeys("18");
+        new Select(driver.findElement(By.id("MType"))).selectByValue("1");
+        driver.findElement(By.id("OwnerName")).click();
+        driver.findElement(By.id("OwnerName")).clear();
+        driver.findElement(By.id("OwnerName")).sendKeys("Yelena");
+        driver.findElement(By.id("Note")).click();
+        driver.findElement(By.id("Note")).clear();
+        driver.findElement(By.id("Note")).sendKeys("notes");
+        driver.findElement(By.id("TZ")).click();
+        driver.findElement(By.id("TZ")).clear();
+        driver.findElement(By.id("TZ")).sendKeys("348658899");
+        driver.findElement(By.id("CVV2")).click();
+        driver.findElement(By.id("CVV2")).clear();
+        driver.findElement(By.id("CVV2")).sendKeys("458");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        new Select(driver.findElement(By.id("DealType"))).selectByValue("8");
+        new Select(driver.findElement(By.id("PaymentsNum"))).selectByVisibleText("3");
+        driver.findElement(By.id("FirstPay")).click();
+        driver.findElement(By.id("FirstPay")).clear();
+        driver.findElement(By.id("FirstPay")).sendKeys("2");
+        driver.findElement(By.id("btnSubmit")).click();
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.findElement(By.id("btnMail")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.id("MenuActivties")).click();
+             //PAYMENTS WITH SIGNITURE magnety
+        driver.findElement(By.id("MenuActivties")).click();
+        driver.findElement(By.id("CardNumber")).click();
+        driver.findElement(By.id("CardNumber")).clear();
+        driver.findElement(By.id("CardNumber")).sendKeys("4580000000000000");
+        new Select(driver.findElement(By.id("Code"))).selectByValue("51");
+        new Select(driver.findElement(By.id("Month2"))).selectByValue("03");
+        new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2021");
+        driver.findElement(By.id("Sum")).click();
+        driver.findElement(By.id("Sum")).clear();
+        driver.findElement(By.id("Sum")).sendKeys("16");
+        new Select(driver.findElement(By.id("MType"))).selectByValue("1");
+        driver.findElement(By.id("OwnerName")).click();
+        driver.findElement(By.id("OwnerName")).clear();
+        driver.findElement(By.id("OwnerName")).sendKeys("Yelena");
+        driver.findElement(By.id("Note")).click();
+        driver.findElement(By.id("Note")).clear();
+        driver.findElement(By.id("Note")).sendKeys("notes");
+        driver.findElement(By.id("TZ")).click();
+        driver.findElement(By.id("TZ")).clear();
+        driver.findElement(By.id("TZ")).sendKeys("348658899");
+        driver.findElement(By.id("CVV2")).click();
+        driver.findElement(By.id("CVV2")).clear();
+        driver.findElement(By.id("CVV2")).sendKeys("458");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        new Select(driver.findElement(By.id("DealType"))).selectByValue("8");
+        new Select(driver.findElement(By.id("PaymentsNum"))).selectByVisibleText("4");
+        driver.findElement(By.id("FirstPay")).click();
+        driver.findElement(By.id("FirstPay")).clear();
+        driver.findElement(By.id("FirstPay")).sendKeys("4");
         driver.findElement(By.id("btnSubmit")).click();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.findElement(By.id("btnMail")).click();
@@ -453,14 +525,13 @@ public class Client9667U {
         driver.findElement(By.id("PhoneNumber")).click();
         driver.findElement(By.id("PhoneNumber")).clear();
         driver.findElement(By.id("PhoneNumber")).sendKeys("0585456911");
-       /*
-        driver.findElement(By.id("TaxId")).click();
+        /* driver.findElement(By.id("TaxId")).click();
         driver.findElement(By.id("TaxId")).clear();
         driver.findElement(By.id("TaxId")).sendKeys("348658899");
         driver.findElement(By.id("Address")).click();
         driver.findElement(By.id("Address")).clear();
+        */
         driver.findElement(By.id("Address")).sendKeys("Address");
-      */
         driver.findElement(By.id("Product")).click();
         driver.findElement(By.id("Product")).clear();
         driver.findElement(By.id("Product")).sendKeys("Product type");
@@ -521,8 +592,8 @@ public class Client9667U {
         driver.findElement(By.id("sendRequestButton")).click();
         driver.findElement(By.cssSelector("input[name=\"radioP\"]")).click();
         driver.findElement(By.id("MenuActivties")).click();
-        /*
-         //REDIRECT
+          /*
+        //REDIRECT
         driver.findElement(By.id("MenuActivties")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuSettings")).click();
