@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:soapui-workspace name="EasyCard" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
-  <con:project name="EasyCard-SOAP API">C:/Users/yelenak/Documents/SoapUI/EasyCard-Soap.xml</con:project>
   <con:project name="RapidOne">C:/Users/yelenak/Documents/SoapUI/RapidOne-soapui-project.xml</con:project>
-  <con:project name="SOAP TESTS  2">C:/Users/yelenak/Documents/Automation/EasyCard2-soapui-project.xml</con:project>
   <con:project name="EasyCard - REST API">C:/Users/yelenak/Documents/SoapUI/EasyCard-Rest.xml</con:project>
-  <con:project name="Test env">C:/Users/yelenak/Documents/SoapUI/Test-env-soapui-project.xml</con:project>
-  <con:project name="Test env">C:/Users/yelenak/Documents/SoapUI/Test-env-soapui-project1.xml</con:project>
+  <con:project name="EasyCard -SOAP WS">C:/Users/yelenak/Documents/SoapUI/SOAP-TEST-3-soapui-project.xml</con:project>
   <con:collectInfoForSupport>false</con:collectInfoForSupport>
 </con:soapui-workspace>

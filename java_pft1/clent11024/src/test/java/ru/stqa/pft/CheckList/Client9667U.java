@@ -70,7 +70,7 @@ public class Client9667U {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://stage.e-c.co.il";
+        baseUrl = "https://secure.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 

@@ -69,7 +69,7 @@ public class Client11713U {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://stage.e-c.co.il";
+        baseUrl = "https://secure.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -104,7 +104,7 @@ public class Client11713U {
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(4000);
-             Thread.sleep(4000);
+          Thread.sleep(4000);
         //DEAL CARD READER / SHEKEL
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
@@ -147,7 +147,7 @@ public class Client11713U {
         driver.findElement(By.id("btnSubmit")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-        //DEAL PHONE SHEKEL
+             //DEAL PHONE SHEKEL
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
