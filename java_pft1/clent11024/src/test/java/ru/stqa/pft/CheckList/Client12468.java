@@ -51,7 +51,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.fail;
 
-public class Client7899U {
+public class Client12468 {
     private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
@@ -60,38 +60,23 @@ public class Client7899U {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://stage.e-c.co.il";
+        baseUrl = "https://secure.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
     public void testCheckList() throws Exception {
-         //LoginEmployerLogout
+                  //LoginManager
         driver.get("https://stage.e-c.co.il/Accounts/Login");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.id("EmplyeUser")).click();
-        driver.findElement(By.id("LoginID")).click();
-        driver.findElement(By.id("LoginID")).clear();
-        driver.findElement(By.id("LoginID")).sendKeys("7899");
-        driver.findElement(By.id("Password")).click();
-        driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("test1234567");
-        driver.findElement(By.id("btnEnter")).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.cssSelector("a.ExitIcon.Icons")).click();
-                //LoginManager
-        driver.get("https://secure.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("MangerUser")).click();
         driver.manage().window().maximize();
         driver.findElement(By.id("LoginID")).click();
         driver.findElement(By.id("LoginID")).clear();
-        driver.findElement(By.id("LoginID")).sendKeys("7899");
+        driver.findElement(By.id("LoginID")).sendKeys("12468");
         driver.findElement(By.id("Password")).click();
         driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("test1212");
+        driver.findElement(By.id("Password")).sendKeys("test1234");
         driver.findElement(By.id("btnEnter")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(4000);

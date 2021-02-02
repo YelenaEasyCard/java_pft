@@ -59,6 +59,11 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.fail;
+/*
+;375510190366075=210420118042166112200?
+04/12
+EMV 510
+ */
 
 public class Client11713U {
     private WebDriver driver;
@@ -69,14 +74,14 @@ public class Client11713U {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://secure.e-c.co.il";
+        baseUrl = "https://stage.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
     public void testCheckList() throws Exception {
-          //LoginEmployerLogout
-        driver.get("https://secure.e-c.co.il/Accounts/Login");
+       //LoginEmployerLogout
+        driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -91,7 +96,7 @@ public class Client11713U {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("a.ExitIcon.Icons")).click();
          //LoginManager
-          driver.get("https://secure.e-c.co.il/Accounts/Login");
+        driver.get("https://secure.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("MangerUser")).click();
         driver.manage().window().maximize();
@@ -105,11 +110,11 @@ public class Client11713U {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(4000);
           Thread.sleep(4000);
-        //DEAL CARD READER / SHEKEL
+                //DEAL CARD READER / SHEKEL
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("5100460000371918=21102010000014091000");
+        driver.findElement(By.id("CardNumber")).sendKeys("375510190366075=210420118042166112200");
         new Select(driver.findElement(By.id("Code"))).selectByValue("00");
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
@@ -128,7 +133,7 @@ public class Client11713U {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-        //DEAL CARD READER / DOLLAR
+         //DEAL CARD READER / DOLLAR
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
@@ -151,13 +156,13 @@ public class Client11713U {
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
-        driver.findElement(By.id("CardNumber")).sendKeys("510000460000371900");
+        driver.findElement(By.id("CardNumber")).sendKeys("375510190000062");
         new Select(driver.findElement(By.id("Code"))).selectByValue("50");
-        new Select(driver.findElement(By.id("Month2"))).selectByVisibleText("10");
-        new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2021");
+        new Select(driver.findElement(By.id("Month2"))).selectByVisibleText("03");
+        new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2022");
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
-        driver.findElement(By.id("Sum")).sendKeys("21");
+        driver.findElement(By.id("Sum")).sendKeys("23");
         new Select(driver.findElement(By.id("MType"))).selectByValue("1");
         driver.findElement(By.id("OwnerName")).click();
         driver.findElement(By.id("OwnerName")).clear();
@@ -194,7 +199,7 @@ public class Client11713U {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-        // DEAL REFUND
+          // DEAL REFUND
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.xpath("//div/input[2]")).click();
         driver.findElement(By.xpath("//div/input[1]")).click();
@@ -222,7 +227,7 @@ public class Client11713U {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-        // PAYMENT WITH CARD READER
+             // PAYMENT WITH CARD READER
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();
@@ -249,7 +254,7 @@ public class Client11713U {
         driver.findElement(By.id("btnMail")).click();
         Thread.sleep(4000);
         driver.findElement(By.id("MenuActivties")).click();
-        //PAYMENTS WITH PHONE
+              //PAYMENTS WITH PHONE
         driver.findElement(By.id("MenuActivties")).click();
         driver.findElement(By.id("CardNumber")).click();
         driver.findElement(By.id("CardNumber")).clear();

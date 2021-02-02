@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="dbea0ed2-2230-4084-9a45-efe4dc8327ab" activeEnvironment="Default" name="EasyCard -SOAP WS" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1c89852f-966c-434f-8d64-43d580d559e0" wsaVersion="NONE" name="ServiceSoap" type="wsdl" bindingName="{http://tempuri.org/}ServiceSoap" soapVersion="1_1" anonymous="optional" definition="https://stage.e-c.co.il/Service/Service.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://stage.e-c.co.il/Service/Service.asmx?WSDL"><con:part><con:url>https://stage.e-c.co.il/Service/Service.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<con:soapui-project id="dbea0ed2-2230-4084-9a45-efe4dc8327ab" activeEnvironment="Default" name="EasyCard -SOAP WS" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1c89852f-966c-434f-8d64-43d580d559e0" wsaVersion="NONE" name="ServiceSoap" type="wsdl" bindingName="{http://tempuri.org/}ServiceSoap" soapVersion="1_1" anonymous="optional" definition="https://stage.e-c.co.il/Service/Service.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://stage.e-c.co.il/Service/Service.asmx?WSDL"><con:part><con:url>https://stage.e-c.co.il/Service/Service.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="Login">
@@ -4054,83 +4054,83 @@
          <tem:CellPhone>?</tem:CellPhone>\r
       </tem:DoDealOldExt>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealOldExt"/></con:call></con:operation><con:operation id="58d4d314-d494-4f9b-8c44-cf366ca6820e" isOneWay="false" action="http://tempuri.org/DoDealPinPad" name="DoDealPinPad" bindingOperationName="DoDealPinPad" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d1075c89-3940-45fb-b15e-476a07638e41" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealOldExt"/></con:call></con:operation><con:operation id="58d4d314-d494-4f9b-8c44-cf366ca6820e" isOneWay="false" action="http://tempuri.org/DoDealPinPad" name="DoDealPinPad" bindingOperationName="DoDealPinPad" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d1075c89-3940-45fb-b15e-476a07638e41" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:DoDealPinPad>\r
          <!--Optional:-->\r
-         <tem:ClientID>?</tem:ClientID>\r
+         <tem:ClientID>11705</tem:ClientID>\r
          <!--Optional:-->\r
-         <tem:Password>?</tem:Password>\r
+         <tem:Password>test1122</tem:Password>\r
          <!--Optional:-->\r
-         <tem:ActionMethod>?</tem:ActionMethod>\r
+         <tem:ActionMethod>00</tem:ActionMethod>\r
          <!--Optional:-->\r
-         <tem:TotalSum>?</tem:TotalSum>\r
+         <tem:TotalSum>1</tem:TotalSum>\r
          <!--Optional:-->\r
-         <tem:PayNumber>?</tem:PayNumber>\r
+         <tem:PayNumber></tem:PayNumber>\r
          <!--Optional:-->\r
-         <tem:FirstPay>?</tem:FirstPay>\r
+         <tem:FirstPay></tem:FirstPay>\r
          <!--Optional:-->\r
-         <tem:AddPay>?</tem:AddPay>\r
+         <tem:AddPay></tem:AddPay>\r
          <!--Optional:-->\r
-         <tem:TZ>?</tem:TZ>\r
+         <tem:TZ>348658899</tem:TZ>\r
          <!--Optional:-->\r
-         <tem:DealType>?</tem:DealType>\r
+         <tem:DealType>1</tem:DealType>\r
          <!--Optional:-->\r
-         <tem:MType>?</tem:MType>\r
+         <tem:MType>1</tem:MType>\r
          <!--Optional:-->\r
-         <tem:Opt>?</tem:Opt>\r
+         <tem:Opt>01</tem:Opt>\r
          <!--Optional:-->\r
-         <tem:Note>?</tem:Note>\r
+         <tem:Note>notes</tem:Note>\r
          <!--Optional:-->\r
-         <tem:OwnerName>?</tem:OwnerName>\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
          <!--Optional:-->\r
-         <tem:ExternalID>?</tem:ExternalID>\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
          <!--Optional:-->\r
-         <tem:Email>?</tem:Email>\r
+         <tem:Email>hjfkjhfhfj@e-c.co.il</tem:Email>\r
          <!--Optional:-->\r
-         <tem:CellPhone>?</tem:CellPhone>\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
       </tem:DoDealPinPad>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/></con:call><con:call id="6a1a4adb-7790-47cf-a647-3187b45e465c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:call><con:call id="6a1a4adb-7790-47cf-a647-3187b45e465c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:DoDealPinPad>\r
          <!--Optional:-->\r
-         <tem:ClientID>?</tem:ClientID>\r
+         <tem:ClientID>11705</tem:ClientID>\r
          <!--Optional:-->\r
-         <tem:Password>?</tem:Password>\r
+         <tem:Password>test1122</tem:Password>\r
          <!--Optional:-->\r
-         <tem:ActionMethod>?</tem:ActionMethod>\r
+         <tem:ActionMethod>123456</tem:ActionMethod>\r
          <!--Optional:-->\r
-         <tem:TotalSum>?</tem:TotalSum>\r
+         <tem:TotalSum>0.1</tem:TotalSum>\r
          <!--Optional:-->\r
-         <tem:PayNumber>?</tem:PayNumber>\r
+         <tem:PayNumber></tem:PayNumber>\r
          <!--Optional:-->\r
-         <tem:FirstPay>?</tem:FirstPay>\r
+         <tem:FirstPay></tem:FirstPay>\r
          <!--Optional:-->\r
-         <tem:AddPay>?</tem:AddPay>\r
+         <tem:AddPay></tem:AddPay>\r
          <!--Optional:-->\r
-         <tem:TZ>?</tem:TZ>\r
+         <tem:TZ>348658899</tem:TZ>\r
          <!--Optional:-->\r
-         <tem:DealType>?</tem:DealType>\r
+         <tem:DealType>1</tem:DealType>\r
          <!--Optional:-->\r
-         <tem:MType>?</tem:MType>\r
+         <tem:MType>1</tem:MType>\r
          <!--Optional:-->\r
-         <tem:Opt>?</tem:Opt>\r
+         <tem:Opt>01</tem:Opt>\r
          <!--Optional:-->\r
-         <tem:Note>?</tem:Note>\r
+         <tem:Note>notes</tem:Note>\r
          <!--Optional:-->\r
-         <tem:OwnerName>?</tem:OwnerName>\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
          <!--Optional:-->\r
-         <tem:ExternalID>?</tem:ExternalID>\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
          <!--Optional:-->\r
-         <tem:Email>?</tem:Email>\r
+         <tem:Email>kjgjkgkgg@e-c.co.il</tem:Email>\r
          <!--Optional:-->\r
-         <tem:CellPhone>?</tem:CellPhone>\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
       </tem:DoDealPinPad>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/></con:call></con:operation><con:operation id="14d5f2d0-29aa-497f-bdf2-31ff0172b576" isOneWay="false" action="http://tempuri.org/DoDealUserCodeWithTokenExt" name="DoDealUserCodeWithTokenExt" bindingOperationName="DoDealUserCodeWithTokenExt" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="db6a16ff-8bf9-4e6b-8bb1-4b3b01c17589" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="14d5f2d0-29aa-497f-bdf2-31ff0172b576" isOneWay="false" action="http://tempuri.org/DoDealUserCodeWithTokenExt" name="DoDealUserCodeWithTokenExt" bindingOperationName="DoDealUserCodeWithTokenExt" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="db6a16ff-8bf9-4e6b-8bb1-4b3b01c17589" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:DoDealUserCodeWithTokenExt>\r
@@ -11742,51 +11742,7 @@
       </tem:GetTokenByExternalID_StringResult>\r
    </soapenv:Body>\r
 </soapenv:Envelope>
-]]></con:request><con:assertion type="SOAP Response" id="8d33dd7f-16ef-420d-8b27-be9d54c3f85a" name="SOAP Response"/><con:assertion type="Simple Contains" id="2bf4bd8b-5caf-4e1d-ba8d-38ea19fbe121" name="Contains"><con:configuration><token>08dc75e4c3f3402eae163eacd25f8c8a</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetTokenByExternalID_StringResult"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="20a0931e-b898-4b4c-be52-7de412738a14" name="PAX A920"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="530aa526-8b5b-4160-95b0-738455ba1220" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="792f8ec7-9143-4345-b41e-2624b4dd665f" name="DoDeal - Request 1 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDeal</con:operation><con:request name="DoDeal - Request 1 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d95365a9-91f9-4f77-8eb3-332220750cf6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
-   <soap:Header/>\r
-   <soap:Body>\r
-      <tem:DoDeal>\r
-         <!--Optional:-->\r
-         <tem:ClientID>22691</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test1234</tem:Password>\r
-         <!--Optional:-->\r
-         <tem:ActionMethod>50</tem:ActionMethod>\r
-         <!--Optional:-->\r
-         <tem:CardNumber>4580031980018548</tem:CardNumber>\r
-         <!--Optional:-->\r
-         <tem:ValMonth>03</tem:ValMonth>\r
-         <!--Optional:-->\r
-         <tem:ValYear>2021</tem:ValYear>\r
-         <!--Optional:-->\r
-         <tem:TotalSum>2</tem:TotalSum>\r
-         <!--Optional:-->\r
-         <tem:PayNumber></tem:PayNumber>\r
-         <!--Optional:-->\r
-         <tem:FirstPay></tem:FirstPay>\r
-         <!--Optional:-->\r
-         <tem:AddPay></tem:AddPay>\r
-         <!--Optional:-->\r
-         <tem:TZ>122222227</tem:TZ>\r
-         <!--Optional:-->\r
-         <tem:CVV2>420</tem:CVV2>\r
-         <!--Optional:-->\r
-         <tem:DealType>1</tem:DealType>\r
-         <!--Optional:-->\r
-         <tem:MType>1</tem:MType>\r
-         <!--Optional:-->\r
-         <tem:Opt>01</tem:Opt>\r
-         <!--Optional:-->\r
-         <tem:Note></tem:Note>\r
-         <!--Optional:-->\r
-         <tem:OwnerName></tem:OwnerName>\r
-         <!--Optional:-->\r
-         <tem:Email></tem:Email>\r
-         <!--Optional:-->\r
-         <tem:CellPhone></tem:CellPhone>\r
-      </tem:DoDeal>\r
-   </soap:Body>\r
-</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d94f1b1d-34d7-46a9-80e2-acb7f1aafc9c" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="f64ba75a-0429-4f92-989a-86605a6afedd" name="DoDealPinPad -"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad -" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+]]></con:request><con:assertion type="SOAP Response" id="8d33dd7f-16ef-420d-8b27-be9d54c3f85a" name="SOAP Response"/><con:assertion type="Simple Contains" id="2bf4bd8b-5caf-4e1d-ba8d-38ea19fbe121" name="Contains"><con:configuration><token>08dc75e4c3f3402eae163eacd25f8c8a</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetTokenByExternalID_StringResult"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="20a0931e-b898-4b4c-be52-7de412738a14" name="PAX A920"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="530aa526-8b5b-4160-95b0-738455ba1220" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="04e1aa67-dd45-4641-87aa-e567e4128a38" name="DoDealPinPad - PAX ECtest Dev1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad - PAX ECtest Dev1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:DoDealPinPad>\r
@@ -11805,7 +11761,7 @@
          <!--Optional:-->\r
          <tem:AddPay></tem:AddPay>\r
          <!--Optional:-->\r
-         <tem:TZ>122222227</tem:TZ>\r
+         <tem:TZ>348658899</tem:TZ>\r
          <!--Optional:-->\r
          <tem:DealType>1</tem:DealType>\r
          <!--Optional:-->\r
@@ -11822,9 +11778,330 @@
          <tem:Email>korsakovyelena@gmail.com</tem:Email>\r
          <!--Optional:-->\r
          <tem:CellPhone>0585456911</tem:CellPhone>\r
+         <!--Optional:-->
+         <tem:PinPadModularityTerminalID>9000010364</tem:PinPadModularityTerminalID>
       </tem:DoDealPinPad>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="69fc8b71-41aa-41f2-b08a-2c0d60c8aa06" name="GetInvoices"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7c22f19d-4160-49fd-bd99-49404c32582b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Stage" searchProperties="true"><con:settings/><con:testStep type="request" id="7271a937-4fbe-425d-af13-174e80eaae51" name="GetInvoices -9667"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetInvoices</con:operation><con:request name="GetInvoices -9667" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="cdbc6993-9ce0-47cf-b9cd-92c5654f0234"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="cf0cf9f8-0897-45c1-8351-8f5b21868d30" name="DoDealPinPad - PAX ECtest Dev 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad - PAX ECtest Dev 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DoDealPinPad>\r
+         <!--Optional:-->\r
+         <tem:ClientID>22691</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:ActionMethod>00</tem:ActionMethod>\r
+         <!--Optional:-->\r
+         <tem:TotalSum>1</tem:TotalSum>\r
+         <!--Optional:-->\r
+         <tem:PayNumber></tem:PayNumber>\r
+         <!--Optional:-->\r
+         <tem:FirstPay></tem:FirstPay>\r
+         <!--Optional:-->\r
+         <tem:AddPay></tem:AddPay>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:DealType>1</tem:DealType>\r
+         <!--Optional:-->\r
+         <tem:MType>1</tem:MType>\r
+         <!--Optional:-->\r
+         <tem:Opt>01</tem:Opt>\r
+         <!--Optional:-->\r
+         <tem:Note>Test/Test?Test#$%</tem:Note>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>Yelena</tem:OwnerName>\r
+         <!--Optional:-->\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
+         <!--Optional:-->\r
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+         <!--Optional:-->
+         <tem:PinPadModularityTerminalID>9000010265</tem:PinPadModularityTerminalID>
+      </tem:DoDealPinPad>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="91e80222-b59b-4637-b81b-11c291a404f9" name="DoDealPinPad -PAX Secure"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad -PAX Secure" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DoDealPinPad>
+         <!--Optional:-->
+         <tem:ClientID>12588</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1234</tem:Password>
+         <!--Optional:-->
+         <tem:ActionMethod>00</tem:ActionMethod>
+         <!--Optional:-->
+         <tem:TotalSum>301</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:TZ>348658899</tem:TZ>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>Test/Test?Test#$%</tem:Note>
+         <!--Optional:-->
+         <tem:OwnerName>Yelena</tem:OwnerName>
+         <!--Optional:-->
+         <tem:ExternalID>123456</tem:ExternalID>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
+         <!--Optional:-->
+         <tem:CellPhone>0585456911</tem:CellPhone>
+         <!--Optional:-->
+         </tem:DoDealPinPad>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="610fbe2f-9197-4b15-b64c-0e082b9c6b42" name="DoDealPinPad -PAX Stage"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad -PAX Stage" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DoDealPinPad>
+         <!--Optional:-->
+         <tem:ClientID>12588</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1234</tem:Password>
+         <!--Optional:-->
+         <tem:ActionMethod>00</tem:ActionMethod>
+         <!--Optional:-->
+         <tem:TotalSum>1</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:TZ>348658899</tem:TZ>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>Test/Test?Test#$%</tem:Note>
+         <!--Optional:-->
+         <tem:OwnerName>Yelena</tem:OwnerName>
+         <!--Optional:-->
+         <tem:ExternalID>123456</tem:ExternalID>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
+         <!--Optional:-->
+         <tem:CellPhone>0585456911</tem:CellPhone>
+         <!--Optional:-->
+         <tem:PinPadModularityTerminalID>2000006110</tem:PinPadModularityTerminalID>
+      </tem:DoDealPinPad>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="afb48912-e04a-48ab-98de-4784f1f546d8" name="DoDealPinPad -PAX Secure 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad -PAX Secure 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DoDealPinPad>
+         <!--Optional:-->
+         <tem:ClientID>12588</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1234</tem:Password>
+         <!--Optional:-->
+         <tem:ActionMethod>00</tem:ActionMethod>
+         <!--Optional:-->
+         <tem:TotalSum>1</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:TZ>348658899</tem:TZ>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>Test</tem:Note>
+         <!--Optional:-->
+         <tem:OwnerName>Yelena</tem:OwnerName>
+         <!--Optional:-->
+         <tem:ExternalID>123456</tem:ExternalID>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
+         <!--Optional:-->
+         <tem:CellPhone>0585456911</tem:CellPhone>
+         <tem:PinPadModularityTerminalID></tem:PinPadModularityTerminalID>
+      </tem:DoDealPinPad>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="25d140b0-049d-4d78-8469-1957b8e11c40" name="DoDealPinPad -PAX Secure Big Boss"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad -PAX Secure Big Boss" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DoDealPinPad>
+         <!--Optional:-->
+         <tem:ClientID>12588</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1234</tem:Password>
+         <!--Optional:-->
+         <tem:ActionMethod>00</tem:ActionMethod>
+         <!--Optional:-->
+         <tem:TotalSum>1</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:TZ>348658899</tem:TZ>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>Test/Test?Test#$%</tem:Note>
+         <!--Optional:-->
+         <tem:OwnerName>Yelena</tem:OwnerName>
+         <!--Optional:-->
+         <tem:ExternalID>123456</tem:ExternalID>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
+         <!--Optional:-->
+         <tem:CellPhone>0585456911</tem:CellPhone>
+         <!--Optional:-->
+         <tem:PinPadModularityTerminalID>2000006110</tem:PinPadModularityTerminalID>
+      </tem:DoDealPinPad>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="78fbb2cb-6935-477a-b1dd-a54a4f9f299c" name="Copy of DoDealPinPad - PAX ECtest Dev1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="Copy of DoDealPinPad - PAX ECtest Dev1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+<soap12:Body>
+<DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>1758</ClientID>
+<Password>÷ùãè4044</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>96.00</TotalSum>
+<PayNumber>1</PayNumber>
+<FirstPay>96.00</FirstPay>
+<AddPay>0.00</AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone></CellPhone>
+</DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="bf3a2f71-b4df-4a11-b905-286ffd96facd" name="1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+<soap12:Body>
+<DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>1758</ClientID>
+<Password>test1234</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>1</TotalSum>
+<PayNumber>1</PayNumber>
+<FirstPay></FirstPay>
+<AddPay></AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone></CellPhone>
+</DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="4e276376-495f-4ddf-832b-09c149678ff5" name="2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+<soap12:Body>
+<DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>7551</ClientID>
+<Password>tova0527</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>1</TotalSum>
+<PayNumber></PayNumber>
+<FirstPay></FirstPay>
+<AddPay></AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone></CellPhone>
+<PinPadModularityTerminalID>2000006250</PinPadModularityTerminalID>
+ </DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="adbe1d7e-e30a-4c0d-8d83-7eb526a0f20a" name="Copy of DoDealPinPad -PAX Secure"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="Copy of DoDealPinPad -PAX Secure" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+<soap12:Body>
+<DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>12588</ClientID>
+<Password>test1234</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>1</TotalSum>
+<PayNumber>1</PayNumber>
+<FirstPay></FirstPay>
+<AddPay></AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone></CellPhone>
+</DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="3e8d2810-9914-4e49-810c-1a4bfbe868c0" name="3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="3" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+<soap12:Body>
+<DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>7551</ClientID>
+<Password>tova0527</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>1</TotalSum>
+<PayNumber>1</PayNumber>
+<FirstPay></FirstPay>
+<AddPay></AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone></CellPhone>
+</DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="5c1a6d21-e4b6-4047-9a00-0991926c6bfd" name="Copy of 3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="Copy of 3" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+<soap12:Body>
+<DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>12588</ClientID>
+<Password>test1234</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>1.00</TotalSum>
+<PayNumber>1</PayNumber>
+<FirstPay>1.00</FirstPay>
+<AddPay>0.00</AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>'
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone></CellPhone>
+</DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="69fc8b71-41aa-41f2-b08a-2c0d60c8aa06" name="GetInvoices"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7c22f19d-4160-49fd-bd99-49404c32582b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Stage" searchProperties="true"><con:settings/><con:testStep type="request" id="7271a937-4fbe-425d-af13-174e80eaae51" name="GetInvoices -9667"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetInvoices</con:operation><con:request name="GetInvoices -9667" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="cdbc6993-9ce0-47cf-b9cd-92c5654f0234"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:GetInvoices>\r
@@ -11991,9 +12268,9 @@
    <soapenv:Body>\r
       <tem:ChangePassword>\r
          <!--Optional:-->\r
-         <tem:ClientID>22707</tem:ClientID>\r
+         <tem:ClientID>22691</tem:ClientID>\r
          <!--Optional:-->\r
-         <tem:OldPassword>test12346</tem:OldPassword>\r
+         <tem:OldPassword>test1234</tem:OldPassword>\r
          <!--Optional:-->\r
          <tem:NewPassword>test1234</tem:NewPassword>\r
       </tem:ChangePassword>\r
@@ -13267,19 +13544,19 @@
    <soapenv:Body>\r
       <tem:DoDeal>\r
          <!--Optional:-->\r
-         <tem:ClientID>22691</tem:ClientID>\r
+         <tem:ClientID>22659</tem:ClientID>\r
          <!--Optional:-->\r
          <tem:Password>test1234</tem:Password>\r
          <!--Optional:-->\r
          <tem:ActionMethod>50</tem:ActionMethod>\r
          <!--Optional:-->\r
-         <tem:CardNumber>4580031980018548</tem:CardNumber>\r
+         <tem:CardNumber>375510190366075</tem:CardNumber>\r
          <!--Optional:-->\r
-         <tem:ValMonth>03</tem:ValMonth>\r
+         <tem:ValMonth>04</tem:ValMonth>\r
          <!--Optional:-->\r
          <tem:ValYear>21</tem:ValYear>\r
          <!--Optional:-->\r
-         <tem:TotalSum>2</tem:TotalSum>\r
+         <tem:TotalSum>1</tem:TotalSum>\r
          <!--Optional:-->\r
          <tem:PayNumber></tem:PayNumber>\r
          <!--Optional:-->\r
@@ -13289,7 +13566,7 @@
          <!--Optional:-->\r
          <tem:TZ>122222227</tem:TZ>\r
          <!--Optional:-->\r
-         <tem:CVV2>420</tem:CVV2>\r
+         <tem:CVV2>510</tem:CVV2>\r
          <!--Optional:-->\r
          <tem:DealType>1</tem:DealType>\r
          <!--Optional:-->\r
@@ -13307,7 +13584,39 @@
          <tem:CellPhone>0585456911</tem:CellPhone>\r
       </tem:DoDeal>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7e4975a2-735b-47f7-9a63-e4ed8cc0d26d" name="SOAP Response"/><con:assertion type="Simple NotContains" id="b67414ed-faee-4063-9d47-e6b2b0a4e525" name="No System error"><con:configuration><token>כאשר לא הוכנס פס מגנטי כולו הגדר עסקה כעסקה טלפונית או כעסקת חתימה בלבד</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="76220ca5-80e4-4a52-9339-d8b22bdfe414" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDeal"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ea13a875-0588-49ec-a777-134ddb863eed" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Tests FOR EMV CLIENT 22648 Clering House" searchProperties="true"><con:settings/><con:testStep type="request" id="72e26e37-679b-47a3-915f-d59c47a01693" name="ChangePassword"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>ChangePassword</con:operation><con:request name="ChangePassword" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d4e5a75-7d2f-4286-9afc-973af0675f3d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7e4975a2-735b-47f7-9a63-e4ed8cc0d26d" name="SOAP Response"/><con:assertion type="Simple NotContains" id="b67414ed-faee-4063-9d47-e6b2b0a4e525" name="No System error"><con:configuration><token>כאשר לא הוכנס פס מגנטי כולו הגדר עסקה כעסקה טלפונית או כעסקת חתימה בלבד</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="76220ca5-80e4-4a52-9339-d8b22bdfe414" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDeal"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="601697d2-c08f-49e4-b8dd-76908b4683b3" name="Copy of ChangePassword"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>ChangePassword</con:operation><con:request name="Copy of ChangePassword" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d4e5a75-7d2f-4286-9afc-973af0675f3d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ChangePassword>\r
+         <!--Optional:-->\r
+         <tem:ClientID>22707</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:OldPassword>test12346</tem:OldPassword>\r
+         <!--Optional:-->\r
+         <tem:NewPassword>test1234</tem:NewPassword>\r
+      </tem:ChangePassword>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3d072b96-0a67-4feb-8906-bdca579f5759" name="SOAP Response"/><con:assertion type="Simple NotContains" id="6710dbb3-d3fc-45f7-bd23-52dc872fc2da" name="Not Contains SYSTEM ERROR"><con:configuration><token>SYSTEM ERROR</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6018a67e-f3cc-4674-a01b-33a52e3773bc" name="Contains"><con:configuration><token>BadUserOrOldPassword&lt;</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ChangePassword"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="035e8c22-7b98-4379-80ea-c1b585991893" name="Copy of TransmitDeals"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>TransmitDeals</con:operation><con:request name="Copy of TransmitDeals" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="79882591-2d15-4b06-b30f-23993463fdff"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:TransmitDeals>\r
+         <!--Optional:-->\r
+         <tem:ClientID>22691</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+      </tem:TransmitDeals>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9b883e28-3542-4a98-ad67-4e810eb7a8c5" name="SOAP Response"/><con:assertion type="Simple Contains" id="99c9035a-18f3-4b38-ad62-a003fb4878c5" name="Message=Success"><con:configuration><token>Success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="28d5713d-1117-49f8-89f1-d2a9d24142a8" name="Contains"><con:configuration><token>=Success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/TransmitDeals"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="72dc3926-775b-4876-88db-a69242cab577" name="Copy of GetDealHistory"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetDealHistory</con:operation><con:request name="Copy of GetDealHistory" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="18400837-297e-403a-b76b-7a1826f2bdd5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetDealHistory>\r
+         <!--Optional:-->\r
+         <tem:ClientID>22691</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+      </tem:GetDealHistory>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="02fb50ef-8486-4739-927d-bd9a7dec594f" name="SOAP Response"/><con:assertion type="Simple NotContains" id="95d96794-8a40-4556-bf4b-62ecf39348cb" name="Not Contains"><con:configuration><token>System error</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetDealHistory"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ea13a875-0588-49ec-a777-134ddb863eed" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Tests FOR EMV CLIENT 22648 Clering House" searchProperties="true"><con:settings/><con:testStep type="request" id="72e26e37-679b-47a3-915f-d59c47a01693" name="ChangePassword"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>ChangePassword</con:operation><con:request name="ChangePassword" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d4e5a75-7d2f-4286-9afc-973af0675f3d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:ChangePassword>\r
@@ -16441,104 +16750,7 @@
          <tem:Token>44b1a288e5734942a93d1e9ea84df387</tem:Token>\r
       </tem:UpdateToken>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d8be7216-8dbb-43ff-88ef-4e18a2a1ab2c" name="SOAP Response"/><con:assertion type="Simple NotContains" id="29670dfc-9aed-4cbc-91b2-cabee86018ea" name="no SYSTEM ERROR"><con:configuration><token>SYSTEM ERROR</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="69c7493b-99f3-4bd8-927c-bd7a21f37fd3" name="Contains"><con:configuration><token>=Success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UpdateToken"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cf7f1a1c-14dd-429b-9825-1eb65a1489e8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="PAX A920" searchProperties="true"><con:settings/><con:testStep type="request" id="3a14f4d5-d9e0-4120-8a7f-d29df25233a6" name="DoDeal"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDeal</con:operation><con:request name="DoDeal" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4127c07f-d54b-4e6c-82b3-de721341f3e6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tem:DoDealPinPad>
-         <!--Optional:-->
-         <tem:ClientID>22707</tem:ClientID>
-         <!--Optional:-->
-         <tem:Password>test12345</tem:Password>
-         <!--Optional:-->
-         <tem:ActionMethod>00</tem:ActionMethod>
-         <!--Optional:-->
-         <tem:TotalSum>6</tem:TotalSum>
-         <!--Optional:-->
-         <tem:PayNumber></tem:PayNumber>
-         <!--Optional:-->
-         <tem:FirstPay></tem:FirstPay>
-         <!--Optional:-->
-         <tem:AddPay></tem:AddPay>
-         <!--Optional:-->
-         <tem:TZ>348658899</tem:TZ>
-         <!--Optional:-->
-         <tem:DealType>1</tem:DealType>
-         <!--Optional:-->
-         <tem:MType>1</tem:MType>
-         <!--Optional:-->
-         <tem:Opt>01</tem:Opt>
-         <!--Optional:-->
-         <tem:Note>test</tem:Note>
-         <!--Optional:-->
-         <tem:OwnerName>Yelena</tem:OwnerName>
-         <!--Optional:-->
-         <tem:ExternalID></tem:ExternalID>
-         <!--Optional:-->
-         <tem:Email>korsakovyelena@gmail.com</tem:Email>
-         <!--Optional:-->
-         <tem:CellPhone>0585456911</tem:CellPhone>
-      </tem:DoDealPinPad>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7e4975a2-735b-47f7-9a63-e4ed8cc0d26d" name="SOAP Response"/><con:assertion type="Simple NotContains" id="b67414ed-faee-4063-9d47-e6b2b0a4e525" name="No System error"><con:configuration><token>כאשר לא הוכנס פס מגנטי כולו הגדר עסקה כעסקה טלפונית או כעסקת חתימה בלבד</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="76220ca5-80e4-4a52-9339-d8b22bdfe414" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDeal"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="e04e4caf-b3cc-49c7-9964-c5f7fdde65bd" name="DoDealExt"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealExt</con:operation><con:request name="DoDealExt" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="b2f22a45-0fa1-4aba-be54-55ee8064d5df"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <tem:DoDealExt>\r
-         <!--Optional:-->\r
-         <tem:ClientID>22691</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test1234</tem:Password>\r
-           <!--Optional:-->\r
-         <tem:CardNumber>4580080111962546</tem:CardNumber>\r
-         <!--Optional:-->\r
-         <tem:ValMonth>10</tem:ValMonth>\r
-         <!--Optional:-->\r
-         <tem:ValYear>21</tem:ValYear>\r
-         <!--Optional:-->\r
-         <tem:TotalSum>10</tem:TotalSum>\r
-         <!--Optional:-->\r
-         <tem:PayNumber></tem:PayNumber>\r
-         <!--Optional:-->\r
-         <tem:FirstPay></tem:FirstPay>\r
-         <!--Optional:-->\r
-         <tem:AddPay></tem:AddPay>\r
-         <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
-         <!--Optional:-->\r
-         <tem:CVV2>458</tem:CVV2>\r
-         <!--Optional:-->\r
-         <tem:DealType>1</tem:DealType>\r
-         <!--Optional:-->\r
-         <tem:MType>1</tem:MType>\r
-         <!--Optional:-->\r
-         <tem:Opt>01</tem:Opt>\r
-         <!--Optional:-->\r
-         <tem:Note>Notes with comments</tem:Note>\r
-         <!--Optional:-->\r
-         <tem:AuthNum></tem:AuthNum>\r
-         <!--Optional:-->\r
-         <tem:OwnerName>CardOwner</tem:OwnerName>\r
-         <!--Optional:-->\r
-         <tem:Cell>0585456911</tem:Cell>\r
-         <!--Optional:-->\r
-         <tem:Email>korsakovyelena@gmail.com</tem:Email>\r
-      </tem:DoDealExt>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2a05d9fc-ac77-4a27-975d-fc00bf01d712" name="SOAP Response"/><con:assertion type="Simple NotContains" id="5ddedbe2-f598-4857-99a3-fcf037fb13c8" name="Not Contains"><con:configuration><token>ErrorDesc=כאשר לא הוכנס פס מגנטי כולו הגדר עסקה כעסקה טלפונית או כעסקת חתימה בלבד</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="dd24b4fa-f8ac-45e1-840f-e1d6c119aa95" name="login"><con:configuration><token>=Login Error&amp;C</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="ea49afe0-cde9-48aa-b5e4-2d12493ae7d5" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealExt"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="55f03c35-f589-4dce-8212-0e18c9af7e93" name="GetDealInfo"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetDealInfo</con:operation><con:request name="GetDealInfo" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="f69175bd-de78-4625-af86-dffeab70b483"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <tem:GetDealInfo>\r
-         <!--Optional:-->\r
-         <tem:ClientID>22707</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test1234</tem:Password>\r
-         <!--Optional:-->\r
-         <tem:CardNumber>8548</tem:CardNumber>\r
-         <!--Optional:-->\r
-         <tem:DealNumber>21062501</tem:DealNumber>\r
-      </tem:GetDealInfo>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="eece7f51-c69f-4a11-989f-4ecb02a0269d" name="SOAP Response"/><con:assertion type="Simple Contains" id="c4c006ae-498c-4449-be1d-2b1de84949c3" name=" &lt;Status>Success&lt;/Status> "><con:configuration><token> &lt;Status>Success&lt;/Status>
-</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetDealInfo"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="99cca47e-bb5f-4052-af70-6df518caf02d" name="SOAP TESTS - STAGE.E-C.CO.IL"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9bb6ad34-bd79-4583-98bd-94f34c15a8ee" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CLIENT (7899) - Upay" searchProperties="true"><con:settings/><con:testStep type="request" id="d8347f51-a0e8-4a6d-b2f5-ab936a1c6faf" name="CheckCard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>CheckCard</con:operation><con:request name="CheckCard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="35925a06-b7a1-4b1d-95e5-b0887c3446e6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d8be7216-8dbb-43ff-88ef-4e18a2a1ab2c" name="SOAP Response"/><con:assertion type="Simple NotContains" id="29670dfc-9aed-4cbc-91b2-cabee86018ea" name="no SYSTEM ERROR"><con:configuration><token>SYSTEM ERROR</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="69c7493b-99f3-4bd8-927c-bd7a21f37fd3" name="Contains"><con:configuration><token>=Success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UpdateToken"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="99cca47e-bb5f-4052-af70-6df518caf02d" name="SOAP TESTS - STAGE.E-C.CO.IL"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9bb6ad34-bd79-4583-98bd-94f34c15a8ee" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CLIENT (7899) - Upay" searchProperties="true"><con:settings/><con:testStep type="request" id="d8347f51-a0e8-4a6d-b2f5-ab936a1c6faf" name="CheckCard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>CheckCard</con:operation><con:request name="CheckCard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="35925a06-b7a1-4b1d-95e5-b0887c3446e6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:CheckCard>\r
@@ -17913,7 +18125,54 @@
       </tem:GetTokenByExternalID_StringResult>\r
    </soapenv:Body>\r
 </soapenv:Envelope>
-]]></con:request><con:assertion type="SOAP Response" id="8d33dd7f-16ef-420d-8b27-be9d54c3f85a" name="SOAP Response"/><con:assertion type="Simple Contains" id="2bf4bd8b-5caf-4e1d-ba8d-38ea19fbe121" name="Contains"><con:configuration><token>16e62b6512004619a58fad50c8fb5964</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetTokenByExternalID_StringResult"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="527376ce-0474-4ca6-9890-9eee8d8e49a8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CLIENT (10897) - Clearing House" searchProperties="true"><con:settings/><con:testStep type="request" id="f804dce9-9180-45ac-94e9-ca06390466c1" name="ChangePassword"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>ChangePassword</con:operation><con:request name="ChangePassword" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d4e5a75-7d2f-4286-9afc-973af0675f3d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+]]></con:request><con:assertion type="SOAP Response" id="8d33dd7f-16ef-420d-8b27-be9d54c3f85a" name="SOAP Response"/><con:assertion type="Simple Contains" id="2bf4bd8b-5caf-4e1d-ba8d-38ea19fbe121" name="Contains"><con:configuration><token>16e62b6512004619a58fad50c8fb5964</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetTokenByExternalID_StringResult"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="a677bf24-0bcb-4126-a5d0-17c53ed6d384" name="Copy of CheckCard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>CheckCard</con:operation><con:request name="Copy of CheckCard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="35925a06-b7a1-4b1d-95e5-b0887c3446e6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:CheckCard>\r
+         <!--Optional:-->\r
+         <tem:ClientID>12588</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:CardNumber>4580080111962546</tem:CardNumber>\r
+         <tem:Month>10</tem:Month>\r
+         <tem:Year>2021</tem:Year>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:CVV>458</tem:CVV>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>OwnerCard</tem:OwnerName>\r
+      </tem:CheckCard>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="125d1d8b-58c2-4e4d-be04-7bb6c5931126" name="SOAP Card True "/><con:assertion type="Simple Contains" id="df9c753b-1149-418b-9e1d-a8b5298f5434" name="Contains"><con:configuration><token>true</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CheckCard"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="732c957c-7e9e-4a86-adb4-e0e449976d1a" name="Copy of GetDealHistory"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetDealHistory</con:operation><con:request name="Copy of GetDealHistory" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="18400837-297e-403a-b76b-7a1826f2bdd5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetDealHistory>
+         <!--Optional:-->
+         <tem:ClientID>12588</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1234</tem:Password>
+      </tem:GetDealHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="02fb50ef-8486-4739-927d-bd9a7dec594f" name="SOAP Response"/><con:assertion type="Simple NotContains" id="95d96794-8a40-4556-bf4b-62ecf39348cb" name="Not Contains"><con:configuration><token>System error</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetDealHistory"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="3f6fe3d9-3b1f-4b49-a8ab-868ce7d9af1d" name="Copy of GetDealInfo"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetDealInfo</con:operation><con:request name="Copy of GetDealInfo" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="f69175bd-de78-4625-af86-dffeab70b483"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetDealInfo>\r
+         <!--Optional:-->\r
+         <tem:ClientID>12588</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:CardNumber>2553</tem:CardNumber>\r
+         <!--Optional:-->\r
+         <tem:DealNumber>01001003</tem:DealNumber>\r
+      </tem:GetDealInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="eece7f51-c69f-4a11-989f-4ecb02a0269d" name="SOAP Response"/><con:assertion type="Simple Contains" id="c4c006ae-498c-4449-be1d-2b1de84949c3" name=" &lt;Status>Success&lt;/Status> "><con:configuration><token> &lt;Status>Success&lt;/Status>
+</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetDealInfo"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="527376ce-0474-4ca6-9890-9eee8d8e49a8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CLIENT (10897) - Clearing House" searchProperties="true"><con:settings/><con:testStep type="request" id="f804dce9-9180-45ac-94e9-ca06390466c1" name="ChangePassword"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>ChangePassword</con:operation><con:request name="ChangePassword" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d4e5a75-7d2f-4286-9afc-973af0675f3d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:ChangePassword>\r
@@ -17993,7 +18252,7 @@
          <!--Optional:-->\r
          <tem:ValYear>2021</tem:ValYear>\r
          <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
+         <tem:TZ>122222227</tem:TZ>\r
          <!--Optional:-->\r
          <tem:CVV2>271</tem:CVV2>\r
          <!--Optional:-->\r
@@ -18726,11 +18985,11 @@
          <!--Optional:-->\r
          <tem:Code></tem:Code>\r
          <!--Optional:-->\r
-         <tem:CardNumber>4580080111962546</tem:CardNumber>\r
+         <tem:CardNumber>375510190000062</tem:CardNumber>\r
          <!--Optional:-->\r
-         <tem:ValMonth>10</tem:ValMonth>\r
+         <tem:ValMonth>03</tem:ValMonth>\r
          <!--Optional:-->\r
-         <tem:ValYear>21</tem:ValYear>\r
+         <tem:ValYear>22</tem:ValYear>\r
          <!--Optional:-->\r
          <tem:TotalSum>40</tem:TotalSum>\r
          <!--Optional:-->\r
@@ -18740,9 +18999,9 @@
          <!--Optional:-->\r
          <tem:AddPay></tem:AddPay>\r
          <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
+         <tem:TZ>122222227</tem:TZ>\r
          <!--Optional:-->\r
-         <tem:CVV2>458</tem:CVV2>\r
+         <tem:CVV2>424</tem:CVV2>\r
          <!--Optional:-->\r
          <tem:DealType>1</tem:DealType>\r
          <!--Optional:-->\r
@@ -18800,7 +19059,7 @@
          <!--Optional:-->\r
          <tem:OwnerName>Card Owner</tem:OwnerName>\r
          <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
+         <tem:TZ>122222227</tem:TZ>\r
          <!--Optional:-->\r
          <tem:CVV2>458</tem:CVV2>\r
          <!--Optional:-->\r
@@ -18840,7 +19099,7 @@
          <!--Optional:-->
          <tem:AddPay></tem:AddPay>
          <!--Optional:-->
-         <tem:TZ>348658899</tem:TZ>
+         <tem:TZ>122222227</tem:TZ>
          <!--Optional:-->
          <tem:CVV2>271</tem:CVV2>
          <!--Optional:-->
@@ -18954,7 +19213,7 @@
          <!--Optional:-->\r
          <tem:AddPay></tem:AddPay>\r
          <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
+         <tem:TZ>122222227</tem:TZ>\r
          <!--Optional:-->\r
          <tem:CVV2>458</tem:CVV2>\r
          <!--Optional:-->\r
@@ -19013,43 +19272,7 @@
          <tem:Email></tem:Email>\r
       </tem:DoDealJ5WithToken>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="c7588281-ed21-4a3d-baed-fe94aadab6b3" name="SOAP Response"/><con:assertion type="Simple NotContains" id="39362fa7-5f4b-418a-879f-97b6dde2a500" name="Token is not validated"><con:configuration><token>Token is not validated</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="9e33018c-b3de-4c03-afe7-c448dd378569" name="Not Contains"><con:configuration><token>סיפרת ביקורת לא תקינה</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="1d00d8d0-caf2-4e45-aee3-94e04c5caa19" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealJ5WithToken"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="66947853-170e-443d-befd-061265b1e516" name="DoDealWithToken"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealWithToken</con:operation><con:request name="DoDealWithToken" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="a4b0dd0b-de55-4d76-b6e5-6e14338ce715"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <tem:DoDealWithToken>\r
-         <!--Optional:-->\r
-         <tem:ClientID>10897</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test1234</tem:Password>\r
-         <!--Optional:-->\r
-         <tem:EcPwd></tem:EcPwd>\r
-         <!--Optional:-->\r
-         <tem:ActionMethod>50</tem:ActionMethod>\r
-         <!--Optional:-->\r
-         <tem:TotalSum>2.50</tem:TotalSum>\r
-         <!--Optional:-->\r
-         <tem:PayNumber></tem:PayNumber>\r
-         <!--Optional:-->\r
-         <tem:FirstPay></tem:FirstPay>\r
-         <!--Optional:-->\r
-         <tem:AddPay></tem:AddPay>\r
-         <!--Optional:-->\r
-         <tem:DealType>1</tem:DealType>\r
-         <!--Optional:-->\r
-         <tem:MType>1</tem:MType>\r
-         <!--Optional:-->\r
-         <tem:Opt>01</tem:Opt>\r
-         <!--Optional:-->\r
-         <tem:Note>notes</tem:Note>\r
-         <!--Optional:-->\r
-         <tem:ExternalID>123456</tem:ExternalID>\r
-         <!--Optional:-->\r
-         <tem:Token>6d71bcbaa44445768c6bbd4b8bed2345</tem:Token>\r
-         <!--Optional:-->\r
-         <tem:OwnerName></tem:OwnerName>\r
-      </tem:DoDealWithToken>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="355a62ef-5416-44ed-88a1-da0ca651da06" name="SOAP Response"/><con:assertion type="Simple NotContains" id="4e7521bc-4bc9-4db0-863d-3fd8755f13af" name="Not Contains"><con:configuration><token>SYSTEM ERROR</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="7ce2dd9b-779e-4a98-854e-2e0a1be556cf" name="Token is not validated"><con:configuration><token>Token is not validated</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="fc4fb797-966b-42f0-91b0-d908b7094ace" name="Errors =סיפרת ביקורת לא תקינה."><con:configuration><token>=סיפרת ביקורת לא תקינה.</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="cfaf2542-b783-48e7-996e-3ab8b321e0a0" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealWithToken"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="170132dc-e1a8-4752-baac-3cee0a0b42fc" name="DoDealWithExternalID"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealWithExternalID</con:operation><con:request name="DoDealWithExternalID" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e37ce3aa-f44b-402b-9f11-57078af527c5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="c7588281-ed21-4a3d-baed-fe94aadab6b3" name="SOAP Response"/><con:assertion type="Simple NotContains" id="39362fa7-5f4b-418a-879f-97b6dde2a500" name="Token is not validated"><con:configuration><token>Token is not validated</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="9e33018c-b3de-4c03-afe7-c448dd378569" name="Not Contains"><con:configuration><token>סיפרת ביקורת לא תקינה</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="1d00d8d0-caf2-4e45-aee3-94e04c5caa19" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealJ5WithToken"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="170132dc-e1a8-4752-baac-3cee0a0b42fc" name="DoDealWithExternalID"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealWithExternalID</con:operation><con:request name="DoDealWithExternalID" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e37ce3aa-f44b-402b-9f11-57078af527c5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:DoDealWithExternalID>\r
@@ -19066,7 +19289,7 @@
          <!--Optional:-->
          <tem:ValYear>2021</tem:ValYear>
          <!--Optional:-->
-         <tem:TZ>348658899</tem:TZ>
+         <tem:TZ>122222227</tem:TZ>
          <!--Optional:-->
          <tem:CVV2>478</tem:CVV2>
   <!--Optional:-->
@@ -19118,7 +19341,7 @@
          <!--Optional:-->
          <tem:AddPay></tem:AddPay>
          <!--Optional:-->
-         <tem:TZ>348658899</tem:TZ>
+         <tem:TZ>122222227</tem:TZ>
          <!--Optional:-->
          <tem:CVV2>478</tem:CVV2>
          <!--Optional:-->
@@ -19170,7 +19393,7 @@
          <!--Optional:-->\r
          <tem:ExternalID></tem:ExternalID>\r
          <!--Optional:-->\r
-         <tem:Token>6d71bcbaa44445768c6bbd4b8bed2345</tem:Token>\r
+         <tem:Token>bd5b77c52e364e2098eccff407bb7753</tem:Token>\r
          <!--Optional:-->\r
          <tem:OwnerName>Customer</tem:OwnerName>\r
       </tem:DoDealWithTokenExt>\r
@@ -19200,7 +19423,7 @@
          <!--Optional:-->
          <tem:AddPay></tem:AddPay>
          <!--Optional:-->
-         <tem:TZ>348658899</tem:TZ>
+         <tem:TZ>122222227</tem:TZ>
          <!--Optional:-->
          <tem:CVV2>478</tem:CVV2>
          <!--Optional:-->
@@ -19452,43 +19675,44 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:DoDeal>\r
-         <!--Optional:-->\r
-         <tem:ClientID>9667</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test1267</tem:Password>\r
-         <!--Optional:-->\r
-         <tem:ActionMethod>50</tem:ActionMethod>\r
-         <!--Optional:-->\r
-         <tem:CardNumber>4580080111962546</tem:CardNumber>\r
-         <!--Optional:-->\r
-         <tem:ValMonth>01</tem:ValMonth>\r
-         <!--Optional:-->\r
-         <tem:ValYear>21</tem:ValYear>\r
-         <!--Optional:-->\r
-         <tem:TotalSum>2</tem:TotalSum>\r
-         <!--Optional:-->\r
-         <tem:PayNumber></tem:PayNumber>\r
-         <!--Optional:-->\r
-         <tem:FirstPay></tem:FirstPay>\r
-         <!--Optional:-->\r
-         <tem:AddPay></tem:AddPay>\r
-         <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
-         <!--Optional:-->\r
-         <tem:CVV2>458</tem:CVV2>\r
-         <!--Optional:-->\r
-         <tem:DealType>1</tem:DealType>\r
-         <!--Optional:-->\r
-         <tem:MType>1</tem:MType>\r
-         <!--Optional:-->\r
-         <tem:Opt>01</tem:Opt>\r
-         <!--Optional:-->\r
-         <tem:Note>Notes</tem:Note>\r
-         <!--Optional:-->\r
-         <tem:OwnerName>CardOwner</tem:OwnerName>\r
-         <!--Optional:-->\r
-         <tem:Email>korsakovyelena@gmail.com
-</tem:Email>\r
+         <!--Optional:-->
+         <tem:ClientID>9667</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1267</tem:Password>
+           <!--Optional:-->
+         <tem:CardNumber>4580080111962546</tem:CardNumber>
+         <!--Optional:-->
+         <tem:ValMonth>10</tem:ValMonth>
+         <!--Optional:-->
+         <tem:ValYear>21</tem:ValYear>
+         <!--Optional:-->
+         <tem:TotalSum>5</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:TZ>348658899</tem:TZ>
+         <!--Optional:-->
+         <tem:CVV2>458</tem:CVV2>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>Notes with comments</tem:Note>
+         <!--Optional:-->
+         <tem:AuthNum></tem:AuthNum>
+         <!--Optional:-->
+         <tem:OwnerName>CardOwner</tem:OwnerName>
+         <!--Optional:-->
+         <tem:Cell>0585456911</tem:Cell>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
          <!--Optional:-->\r
          <tem:CellPhone>0585456911</tem:CellPhone>\r
       </tem:DoDeal>\r
@@ -20499,42 +20723,44 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:DoDeal>\r
-         <!--Optional:-->\r
-         <tem:ClientID>9667</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test1267</tem:Password>\r
-         <!--Optional:-->\r
-         <tem:ActionMethod>50</tem:ActionMethod>\r
-         <!--Optional:-->\r
-         <tem:CardNumber>4580080111962546</tem:CardNumber>\r
-         <!--Optional:-->\r
-         <tem:ValMonth>01</tem:ValMonth>\r
-         <!--Optional:-->\r
-         <tem:ValYear>21</tem:ValYear>\r
-         <!--Optional:-->\r
-         <tem:TotalSum>3</tem:TotalSum>\r
-         <!--Optional:-->\r
-         <tem:PayNumber></tem:PayNumber>\r
-         <!--Optional:-->\r
-         <tem:FirstPay></tem:FirstPay>\r
-         <!--Optional:-->\r
-         <tem:AddPay></tem:AddPay>\r
-         <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
-         <!--Optional:-->\r
-         <tem:CVV2>458</tem:CVV2>\r
-         <!--Optional:-->\r
-         <tem:DealType>1</tem:DealType>\r
-         <!--Optional:-->\r
-         <tem:MType>1</tem:MType>\r
-         <!--Optional:-->\r
-         <tem:Opt>51</tem:Opt>\r
-         <!--Optional:-->\r
-         <tem:Note>Notes</tem:Note>\r
-         <!--Optional:-->\r
-         <tem:OwnerName>CardOwner</tem:OwnerName>\r
-         <!--Optional:-->\r
-         <tem:Email>korsakovyelena@gmail.com</tem:Email>\r
+          <!--Optional:-->
+         <tem:ClientID>9667</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1267</tem:Password>
+           <!--Optional:-->
+         <tem:CardNumber>4580080111962546</tem:CardNumber>
+         <!--Optional:-->
+         <tem:ValMonth>10</tem:ValMonth>
+         <!--Optional:-->
+         <tem:ValYear>21</tem:ValYear>
+         <!--Optional:-->
+         <tem:TotalSum>1</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:TZ>348658899</tem:TZ>
+         <!--Optional:-->
+         <tem:CVV2>458</tem:CVV2>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>Notes with comments</tem:Note>
+         <!--Optional:-->
+         <tem:AuthNum></tem:AuthNum>
+         <!--Optional:-->
+         <tem:OwnerName>CardOwner</tem:OwnerName>
+         <!--Optional:-->
+         <tem:Cell>0585456911</tem:Cell>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
          <!--Optional:-->\r
          <tem:CellPhone>0585456911</tem:CellPhone>\r
       </tem:DoDeal>\r
@@ -21435,15 +21661,15 @@
          <!--Optional:-->\r
        <tem:ActionMethod>50 </tem:ActionMethod>
          <!--Optional:-->\r
-       <tem:CardNumber>5100460000371918</tem:CardNumber>
+       <tem:CardNumber>375510190000062</tem:CardNumber>
          <!--Optional:-->
-         <tem:ValMonth>10</tem:ValMonth>
+         <tem:ValMonth>03</tem:ValMonth>
          <!--Optional:-->
-         <tem:ValYear>21</tem:ValYear>
+         <tem:ValYear>22</tem:ValYear>
          <!--Optional:-->
          <tem:TZ>348658899</tem:TZ>
          <!--Optional:-->
-         <tem:CVV2>306</tem:CVV2>
+         <tem:CVV2>424</tem:CVV2>
   <!--Optional:-->
          <tem:TotalSum>1</tem:TotalSum>\r
          <!--Optional:-->\r
@@ -21499,7 +21725,7 @@
          <!--Optional:-->\r
          <tem:ExternalID>123456</tem:ExternalID>\r
          <!--Optional:-->\r
-         <tem:Token>906af210abe64cbda31df0808a047308</tem:Token>\r
+         <tem:Token>9aa64f96f3584f9b88db2ddf1fe0469d</tem:Token>\r
          <!--Optional:-->\r
          <tem:OwnerName></tem:OwnerName>\r
       </tem:DoDealWithToken>\r
@@ -21599,9 +21825,9 @@
          <!--Optional:-->
          <tem:Code></tem:Code>
          <!--Optional:-->
-         <tem:CardNumber>5100460000371892</tem:CardNumber>
+         <tem:CardNumber>375510190366075</tem:CardNumber>
          <!--Optional:-->
-         <tem:ValMonth>10</tem:ValMonth>
+         <tem:ValMonth>04</tem:ValMonth>
          <!--Optional:-->
          <tem:ValYear>21</tem:ValYear>
          <!--Optional:-->
@@ -21615,7 +21841,7 @@
          <!--Optional:-->
          <tem:TZ>348658899</tem:TZ>
          <!--Optional:-->
-         <tem:CVV2>271</tem:CVV2>
+         <tem:CVV2>510</tem:CVV2>
          <!--Optional:-->
          <tem:DealType>1</tem:DealType>
          <!--Optional:-->
@@ -21673,17 +21899,17 @@
          <!--Optional:-->\r
          <tem:Token></tem:Token>\r
          <!--Optional:-->\r
-         <tem:CardNumber>5100460000371918</tem:CardNumber>\r
+         <tem:CardNumber>375510190366075</tem:CardNumber>\r
          <!--Optional:-->\r
-         <tem:ValMonth>10</tem:ValMonth>\r
+         <tem:ValMonth>04</tem:ValMonth>\r
          <!--Optional:-->\r
          <tem:ValYear>21</tem:ValYear>\r
          <!--Optional:-->\r
          <tem:OwnerName>Card Owner</tem:OwnerName>\r
          <!--Optional:-->\r
-         <tem:TZ>348658899</tem:TZ>\r
+         <tem:TZ>122222227</tem:TZ>\r
          <!--Optional:-->\r
-         <tem:CVV2>306</tem:CVV2>\r
+         <tem:CVV2>510</tem:CVV2>\r
          <!--Optional:-->\r
          <tem:JsonProductsList>[{"Quantity" : 1, "Number" : "0", "price" : 1, "name" : "test"}] </tem:JsonProductsList>\r
          <!--Optional:-->\r
@@ -21707,11 +21933,11 @@
          <!--Optional:-->
          <tem:ActionMethod>50</tem:ActionMethod>
          <!--Optional:-->
-         <tem:CardNumber>5100460000371900</tem:CardNumber>
+         <tem:CardNumber>375510190366075</tem:CardNumber>
          <!--Optional:-->
-         <tem:ValMonth>10</tem:ValMonth>
+         <tem:ValMonth>04</tem:ValMonth>
          <!--Optional:-->
-         <tem:ValYear>2021</tem:ValYear>
+         <tem:ValYear>21</tem:ValYear>
          <!--Optional:-->
          <tem:TotalSum>2</tem:TotalSum>
          <!--Optional:-->
@@ -21723,7 +21949,7 @@
          <!--Optional:-->
          <tem:TZ>348658899</tem:TZ>
          <!--Optional:-->
-         <tem:CVV2>779</tem:CVV2>
+         <tem:CVV2>510</tem:CVV2>
          <!--Optional:-->
          <tem:DealType>1</tem:DealType>
          <!--Optional:-->
@@ -21749,9 +21975,9 @@
          <!--Optional:-->\r
          <tem:Password>test12345</tem:Password>\r
            <!--Optional:-->\r
-         <tem:CardNumber>5100460000371918</tem:CardNumber>\r
+         <tem:CardNumber>375510190366075</tem:CardNumber>\r
          <!--Optional:-->\r
-         <tem:ValMonth>10</tem:ValMonth>\r
+         <tem:ValMonth>04</tem:ValMonth>\r
          <!--Optional:-->\r
          <tem:ValYear>21</tem:ValYear>\r
          <!--Optional:-->\r
@@ -21765,7 +21991,7 @@
          <!--Optional:-->\r
          <tem:TZ>348658899</tem:TZ>\r
          <!--Optional:-->\r
-         <tem:CVV2>306</tem:CVV2>\r
+         <tem:CVV2>510</tem:CVV2>\r
          <!--Optional:-->\r
          <tem:DealType>1</tem:DealType>\r
          <!--Optional:-->\r
@@ -25738,7 +25964,7 @@
    <soapenv:Body>\r
       <tem:GetNewToken>\r
          <!--Optional:-->\r
-         <tem:ClientID>12309</tem:ClientID>\r
+         <tem:ClientID>10901</tem:ClientID>\r
          <!--Optional:-->\r
          <tem:Password>test1234</tem:Password>\r
          <!--Optional:-->\r
@@ -25792,7 +26018,7 @@
    <soapenv:Body>\r
       <tem:UpdateToken>\r
          <!--Optional:-->\r
-         <tem:ClientID>12309</tem:ClientID>\r
+         <tem:ClientID>10901</tem:ClientID>\r
          <!--Optional:-->\r
          <tem:Password>test1234</tem:Password>\r
          <!--Optional:-->\r
@@ -25812,7 +26038,7 @@
          <!--Optional:-->\r
          <tem:Note>Notes שם</tem:Note>\r
          <!--Optional:-->\r
-         <tem:Token>a5854ebb75d44bde89a2ea3f4cc54081</tem:Token>\r
+         <tem:Token>8202e5090ba346cf807d21dd35898800</tem:Token>\r
       </tem:UpdateToken>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d8be7216-8dbb-43ff-88ef-4e18a2a1ab2c" name="SOAP Response"/><con:assertion type="Simple NotContains" id="29670dfc-9aed-4cbc-91b2-cabee86018ea" name="no SYSTEM ERROR"><con:configuration><token>SYSTEM ERROR</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="69c7493b-99f3-4bd8-927c-bd7a21f37fd3" name="Contains"><con:configuration><token>=Success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/UpdateToken"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="3732168b-b886-4e78-a8b6-e5095dad0ba9" name="SOAP TESTS - SECURE.E-C.CO.IL"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="13ee8be7-b0c0-482d-ad48-4659b5675f37" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CLIENT (7899) - Upay" searchProperties="true"><con:settings/><con:testStep type="request" id="a473dee7-6597-4621-8659-d18403808dcf" name="CheckCard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>CheckCard</con:operation><con:request name="CheckCard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="35925a06-b7a1-4b1d-95e5-b0887c3446e6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
@@ -27190,7 +27416,28 @@
       </tem:GetTokenByExternalID_StringResult>\r
    </soapenv:Body>\r
 </soapenv:Envelope>
-]]></con:request><con:assertion type="SOAP Response" id="8d33dd7f-16ef-420d-8b27-be9d54c3f85a" name="SOAP Response"/><con:assertion type="Simple Contains" id="2bf4bd8b-5caf-4e1d-ba8d-38ea19fbe121" name="Contains"><con:configuration><token>16e62b6512004619a58fad50c8fb5964</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetTokenByExternalID_StringResult"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0763335f-1cc8-4103-9377-a7b797006cb8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CLIENT (9667) - ECInvoice" searchProperties="true"><con:settings/><con:testStep type="request" id="94834505-05f4-4226-99ee-7804f44f916b" name="ChangePassword"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>ChangePassword</con:operation><con:request name="ChangePassword" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d4e5a75-7d2f-4286-9afc-973af0675f3d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+]]></con:request><con:assertion type="SOAP Response" id="8d33dd7f-16ef-420d-8b27-be9d54c3f85a" name="SOAP Response"/><con:assertion type="Simple Contains" id="2bf4bd8b-5caf-4e1d-ba8d-38ea19fbe121" name="Contains"><con:configuration><token>16e62b6512004619a58fad50c8fb5964</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetTokenByExternalID_StringResult"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="b7941e86-698e-46da-adce-e1024dc049d1" name="Copy of GetDealHistory_StringResult"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetDealHistory_StringResult</con:operation><con:request name="Copy of GetDealHistory_StringResult" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a32ed0e-9a8b-491b-87fc-039eb0db7273"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetDealHistory_StringResult>
+         <!--Optional:-->
+         <tem:ClientID>7899</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1212</tem:Password>
+      </tem:GetDealHistory_StringResult>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:assertion type="SOAP Response" id="c3b74aeb-4032-4ffb-8c9d-dee1177537b4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetDealHistory_StringResult"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="6ef3bb1b-80ed-46a1-b919-784fb2fceedb" name="Copy of GetDealHistory"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>GetDealHistory</con:operation><con:request name="Copy of GetDealHistory" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="18400837-297e-403a-b76b-7a1826f2bdd5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetDealHistory>
+         <!--Optional:-->
+         <tem:ClientID>11426</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password></tem:Password>
+      </tem:GetDealHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="02fb50ef-8486-4739-927d-bd9a7dec594f" name="SOAP Response"/><con:assertion type="Simple NotContains" id="95d96794-8a40-4556-bf4b-62ecf39348cb" name="Not Contains"><con:configuration><token>System error</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetDealHistory"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0763335f-1cc8-4103-9377-a7b797006cb8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CLIENT (9667) - ECInvoice" searchProperties="true"><con:settings/><con:testStep type="request" id="94834505-05f4-4226-99ee-7804f44f916b" name="ChangePassword"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>ChangePassword</con:operation><con:request name="ChangePassword" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d4e5a75-7d2f-4286-9afc-973af0675f3d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:ChangePassword>\r
@@ -27419,7 +27666,7 @@
          <!--Optional:-->\r
          <tem:CardNumber>4580080111962546</tem:CardNumber>\r
          <!--Optional:-->\r
-         <tem:ValMonth>01</tem:ValMonth>\r
+         <tem:ValMonth>06</tem:ValMonth>\r
          <!--Optional:-->\r
          <tem:ValYear>21</tem:ValYear>\r
          <!--Optional:-->\r
@@ -28466,7 +28713,7 @@
          <!--Optional:-->\r
          <tem:CardNumber>4580080111962546</tem:CardNumber>\r
          <!--Optional:-->\r
-         <tem:ValMonth>01</tem:ValMonth>\r
+         <tem:ValMonth>06</tem:ValMonth>\r
          <!--Optional:-->\r
          <tem:ValYear>21</tem:ValYear>\r
          <!--Optional:-->\r
@@ -29382,86 +29629,86 @@
          <tem:ClientID>11713</tem:ClientID>
              </tem:ValidateDealWithID>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e663640b-b091-4ce0-8788-8325da8cab17" name="SOAP Response"/><con:assertion type="Simple NotContains" id="c2a1cb0f-e595-4c88-b164-d60f0229cd0f" name="Error=1"><con:configuration><token>Error=1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="5170ab32-ed05-44f7-a7eb-f301442f43d3" name="Contains"><con:configuration><token>CardNumber=3717</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ValidateDealWithID"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="1f70de6d-ebf6-4ffc-9ebc-69b91711b60f" name="DoDealWithExternalID"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealWithExternalID</con:operation><con:request name="DoDealWithExternalID" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e37ce3aa-f44b-402b-9f11-57078af527c5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <tem:DoDealWithExternalID>\r
-         <!--Optional:-->\r
-         <tem:ClientID>11713</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test12345</tem:Password>\r
-         <!--Optional:-->\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e663640b-b091-4ce0-8788-8325da8cab17" name="SOAP Response"/><con:assertion type="Simple NotContains" id="c2a1cb0f-e595-4c88-b164-d60f0229cd0f" name="Error=1"><con:configuration><token>Error=1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="5170ab32-ed05-44f7-a7eb-f301442f43d3" name="Contains"><con:configuration><token>CardNumber=3717</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ValidateDealWithID"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="1f70de6d-ebf6-4ffc-9ebc-69b91711b60f" name="DoDealWithExternalID"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealWithExternalID</con:operation><con:request name="DoDealWithExternalID" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e37ce3aa-f44b-402b-9f11-57078af527c5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:DoDealWithExternalID>
+         <!--Optional:-->
+         <tem:ClientID>11713</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test12345</tem:Password>
+         <!--Optional:-->
        <tem:ActionMethod>50 </tem:ActionMethod>
-         <!--Optional:-->\r
-       <tem:CardNumber>5100460000371918</tem:CardNumber>
          <!--Optional:-->
-         <tem:ValMonth>10</tem:ValMonth>
+       <tem:CardNumber>375510190000062</tem:CardNumber>
          <!--Optional:-->
-         <tem:ValYear>21</tem:ValYear>
+         <tem:ValMonth>03</tem:ValMonth>
+         <!--Optional:-->
+         <tem:ValYear>22</tem:ValYear>
          <!--Optional:-->
          <tem:TZ>348658899</tem:TZ>
          <!--Optional:-->
-         <tem:CVV2>306</tem:CVV2>
+         <tem:CVV2>424</tem:CVV2>
   <!--Optional:-->
-         <tem:TotalSum>1</tem:TotalSum>\r
-         <!--Optional:-->\r
-         <tem:PayNumber></tem:PayNumber>\r
-         <!--Optional:-->\r
-         <tem:FirstPay></tem:FirstPay>\r
-         <!--Optional:-->\r
-         <tem:AddPay></tem:AddPay>\r
-         <!--Optional:-->\r
-                  <tem:DealType>1</tem:DealType>\r
-         <!--Optional:-->\r
-         <tem:MType>1</tem:MType>\r
-         <!--Optional:-->\r
-         <tem:Opt>01</tem:Opt>\r
-         <!--Optional:-->\r
-         <tem:Note>note</tem:Note>\r
-         <!--Optional:-->\r
-         <tem:ExternalID>123456</tem:ExternalID>\r
-         <!--Optional:-->\r
-         <tem:OwnerName></tem:OwnerName>\r
-         <!--Optional:-->\r
-         <tem:Email>korsakovyelena@gmail.com</tem:Email>\r
-      </tem:DoDealWithExternalID>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="23671827-4803-47d7-929c-111358de367c" name="SOAP Response"/><con:assertion type="Simple Contains" id="8df0ea7a-7b86-4bc0-9acc-ab1868499656" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealWithExternalID"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="77720bbf-02d3-4da0-ab52-8da0b03dda57" name="DoDealWithToken"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealWithToken</con:operation><con:request name="DoDealWithToken" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="a4b0dd0b-de55-4d76-b6e5-6e14338ce715"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <tem:DoDealWithToken>\r
-         <!--Optional:-->\r
-         <tem:ClientID>11713</tem:ClientID>\r
-         <!--Optional:-->\r
-         <tem:Password>test12345</tem:Password>\r
-         <!--Optional:-->\r
-         <tem:EcPwd></tem:EcPwd>\r
-         <!--Optional:-->\r
-         <tem:ActionMethod>50</tem:ActionMethod>\r
-         <!--Optional:-->\r
-         <tem:TotalSum>3</tem:TotalSum>\r
-         <!--Optional:-->\r
-         <tem:PayNumber></tem:PayNumber>\r
-         <!--Optional:-->\r
-         <tem:FirstPay></tem:FirstPay>\r
-         <!--Optional:-->\r
-         <tem:AddPay></tem:AddPay>\r
-         <!--Optional:-->\r
-         <tem:DealType>1</tem:DealType>\r
-         <!--Optional:-->\r
-         <tem:MType>1</tem:MType>\r
-         <!--Optional:-->\r
-         <tem:Opt>01</tem:Opt>\r
-         <!--Optional:-->\r
-         <tem:Note>notes</tem:Note>\r
-         <!--Optional:-->\r
-         <tem:ExternalID>123456</tem:ExternalID>\r
-         <!--Optional:-->\r
-         <tem:Token>906af210abe64cbda31df0808a047308</tem:Token>\r
-         <!--Optional:-->\r
-         <tem:OwnerName></tem:OwnerName>\r
-      </tem:DoDealWithToken>\r
-   </soapenv:Body>\r
+         <tem:TotalSum>1.1</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+                  <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>note</tem:Note>
+         <!--Optional:-->
+         <tem:ExternalID>123456</tem:ExternalID>
+         <!--Optional:-->
+         <tem:OwnerName></tem:OwnerName>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
+      </tem:DoDealWithExternalID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="23671827-4803-47d7-929c-111358de367c" name="SOAP Response"/><con:assertion type="Simple Contains" id="8df0ea7a-7b86-4bc0-9acc-ab1868499656" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealWithExternalID"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="77720bbf-02d3-4da0-ab52-8da0b03dda57" name="DoDealWithToken"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealWithToken</con:operation><con:request name="DoDealWithToken" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="a4b0dd0b-de55-4d76-b6e5-6e14338ce715"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:DoDealWithToken>
+         <!--Optional:-->
+         <tem:ClientID>9667</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>test1267</tem:Password>
+         <!--Optional:-->
+         <tem:EcPwd></tem:EcPwd>
+         <!--Optional:-->
+         <tem:ActionMethod>50</tem:ActionMethod>
+         <!--Optional:-->
+         <tem:TotalSum>3</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>notes</tem:Note>
+         <!--Optional:-->
+         <tem:ExternalID>123456</tem:ExternalID>
+         <!--Optional:-->
+         <tem:Token>79c4990038b447ac8cc97a11dd995d90</tem:Token>
+         <!--Optional:-->
+         <tem:OwnerName></tem:OwnerName>
+      </tem:DoDealWithToken>
+   </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="355a62ef-5416-44ed-88a1-da0ca651da06" name="SOAP Response"/><con:assertion type="Simple NotContains" id="4e7521bc-4bc9-4db0-863d-3fd8755f13af" name="Not Contains"><con:configuration><token>SYSTEM ERROR</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="7ce2dd9b-779e-4a98-854e-2e0a1be556cf" name="Token is not validated"><con:configuration><token>Token is not validated</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="fc4fb797-966b-42f0-91b0-d908b7094ace" name="Errors =סיפרת ביקורת לא תקינה."><con:configuration><token>=סיפרת ביקורת לא תקינה.</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="cfaf2542-b783-48e7-996e-3ab8b321e0a0" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealWithToken"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="87ba8dd2-a721-4ca8-9f29-b25ec8ed01df" name="CheckCard"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>CheckCard</con:operation><con:request name="CheckCard" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="35925a06-b7a1-4b1d-95e5-b0887c3446e6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
@@ -29557,11 +29804,11 @@
          <!--Optional:-->
          <tem:Code></tem:Code>
          <!--Optional:-->
-         <tem:CardNumber>5100460000371892</tem:CardNumber>
+         <tem:CardNumber>375510190000062</tem:CardNumber>
          <!--Optional:-->
-         <tem:ValMonth>10</tem:ValMonth>
+         <tem:ValMonth>03</tem:ValMonth>
          <!--Optional:-->
-         <tem:ValYear>21</tem:ValYear>
+         <tem:ValYear>22</tem:ValYear>
          <!--Optional:-->
          <tem:TotalSum>19</tem:TotalSum>
          <!--Optional:-->
@@ -29573,7 +29820,7 @@
          <!--Optional:-->
          <tem:TZ>348658899</tem:TZ>
          <!--Optional:-->
-         <tem:CVV2>271</tem:CVV2>
+         <tem:CVV2>424</tem:CVV2>
          <!--Optional:-->
          <tem:DealType>1</tem:DealType>
          <!--Optional:-->
@@ -29631,17 +29878,17 @@
          <!--Optional:-->\r
          <tem:Token></tem:Token>\r
          <!--Optional:-->\r
-         <tem:CardNumber>5100460000371918</tem:CardNumber>\r
+         <tem:CardNumber>375510190000062</tem:CardNumber>\r
          <!--Optional:-->\r
-         <tem:ValMonth>10</tem:ValMonth>\r
+         <tem:ValMonth>03</tem:ValMonth>\r
          <!--Optional:-->\r
-         <tem:ValYear>21</tem:ValYear>\r
+         <tem:ValYear>22</tem:ValYear>\r
          <!--Optional:-->\r
          <tem:OwnerName>Card Owner</tem:OwnerName>\r
          <!--Optional:-->\r
          <tem:TZ>348658899</tem:TZ>\r
          <!--Optional:-->\r
-         <tem:CVV2>306</tem:CVV2>\r
+         <tem:CVV2>424</tem:CVV2>\r
          <!--Optional:-->\r
          <tem:JsonProductsList>[{"Quantity" : 1, "Number" : "0", "price" : 1, "name" : "test"}] </tem:JsonProductsList>\r
          <!--Optional:-->\r
@@ -29665,13 +29912,13 @@
          <!--Optional:-->
          <tem:ActionMethod>50</tem:ActionMethod>
          <!--Optional:-->
-         <tem:CardNumber>5100460000371900</tem:CardNumber>
+         <tem:CardNumber>375510190000062</tem:CardNumber>
          <!--Optional:-->
-         <tem:ValMonth>10</tem:ValMonth>
+         <tem:ValMonth>03</tem:ValMonth>
          <!--Optional:-->
-         <tem:ValYear>2021</tem:ValYear>
+         <tem:ValYear>2022</tem:ValYear>
          <!--Optional:-->
-         <tem:TotalSum>2</tem:TotalSum>
+         <tem:TotalSum>1</tem:TotalSum>
          <!--Optional:-->
          <tem:PayNumber></tem:PayNumber>
          <!--Optional:-->
@@ -29681,7 +29928,7 @@
          <!--Optional:-->
          <tem:TZ>348658899</tem:TZ>
          <!--Optional:-->
-         <tem:CVV2>779</tem:CVV2>
+         <tem:CVV2>424</tem:CVV2>
          <!--Optional:-->
          <tem:DealType>1</tem:DealType>
          <!--Optional:-->
@@ -30658,4 +30905,315 @@
          <tem:DealID>29866799</tem:DealID>\r
       </tem:ProduceECInvoiceDocumentPerDeal>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="219ad07b-2fa2-4a5f-9a64-95549348421c" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ProduceECInvoiceDocumentPerDeal"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="219ad07b-2fa2-4a5f-9a64-95549348421c" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ProduceECInvoiceDocumentPerDeal"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1a0ca4ed-584d-484d-9018-d2f6d2b8b29e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DoDeal Pax" searchProperties="true"><con:settings/><con:testStep type="request" id="9df845fb-1784-4744-a8da-1e11b08d5fff" name="DoDealPinPad  Secure"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad  Secure" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DoDealPinPad>\r
+         <!--Optional:-->\r
+         <tem:ClientID>12588</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:ActionMethod>123456</tem:ActionMethod>\r
+         <!--Optional:-->\r
+         <tem:TotalSum>0.1</tem:TotalSum>\r
+         <!--Optional:-->\r
+         <tem:PayNumber></tem:PayNumber>\r
+         <!--Optional:-->\r
+         <tem:FirstPay></tem:FirstPay>\r
+         <!--Optional:-->\r
+         <tem:AddPay></tem:AddPay>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:DealType>1</tem:DealType>\r
+         <!--Optional:-->\r
+         <tem:MType>1</tem:MType>\r
+         <!--Optional:-->\r
+         <tem:Opt>01</tem:Opt>\r
+         <!--Optional:-->\r
+         <tem:Note>notes</tem:Note>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
+         <!--Optional:-->\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
+         <!--Optional:-->\r
+         <tem:Email>kjgjkgkgg@e-c.co.il</tem:Email>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+         </tem:DoDealPinPad>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="87b5cbc5-7b9b-4b6e-a49e-88cb28787906" name="DoDealPinPad Stage"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad Stage" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://stage.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DoDealPinPad>\r
+         <!--Optional:-->\r
+         <tem:ClientID>12588</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:ActionMethod>123456</tem:ActionMethod>\r
+         <!--Optional:-->\r
+         <tem:TotalSum>0.1</tem:TotalSum>\r
+         <!--Optional:-->\r
+         <tem:PayNumber></tem:PayNumber>\r
+         <!--Optional:-->\r
+         <tem:FirstPay></tem:FirstPay>\r
+         <!--Optional:-->\r
+         <tem:AddPay></tem:AddPay>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:DealType>1</tem:DealType>\r
+         <!--Optional:-->\r
+         <tem:MType>1</tem:MType>\r
+         <!--Optional:-->\r
+         <tem:Opt>01</tem:Opt>\r
+         <!--Optional:-->\r
+         <tem:Note>notes</tem:Note>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
+         <!--Optional:-->\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
+         <!--Optional:-->\r
+         <tem:Email>kjgjkgkgg@e-c.co.il</tem:Email>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+         <tem:PinPadModularityTerminalID>2000006110</tem:PinPadModularityTerminalID>
+      </tem:DoDealPinPad>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="edd6c236-79ea-4308-854e-24225c18a5a7" name="DoDealPinPad EcTest"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad EcTest" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ectest.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DoDealPinPad>\r
+         <!--Optional:-->\r
+         <tem:ClientID>22691</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:ActionMethod>123456</tem:ActionMethod>\r
+         <!--Optional:-->\r
+         <tem:TotalSum>0.1</tem:TotalSum>\r
+         <!--Optional:-->\r
+         <tem:PayNumber></tem:PayNumber>\r
+         <!--Optional:-->\r
+         <tem:FirstPay></tem:FirstPay>\r
+         <!--Optional:-->\r
+         <tem:AddPay></tem:AddPay>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:DealType>1</tem:DealType>\r
+         <!--Optional:-->\r
+         <tem:MType>1</tem:MType>\r
+         <!--Optional:-->\r
+         <tem:Opt>01</tem:Opt>\r
+         <!--Optional:-->\r
+         <tem:Note>notes</tem:Note>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
+         <!--Optional:-->\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
+         <!--Optional:-->\r
+         <tem:Email>kjgjkgkgg@e-c.co.il</tem:Email>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+         
+               </tem:DoDealPinPad>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="93067780-81d8-4889-b4f4-3888e5d35228" name="DoDealPinPad  Secure 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad  Secure 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DoDealPinPad>\r
+         <!--Optional:-->\r
+         <tem:ClientID>12588</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>test1234</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:ActionMethod>123456</tem:ActionMethod>\r
+         <!--Optional:-->\r
+         <tem:TotalSum>0.1</tem:TotalSum>\r
+         <!--Optional:-->\r
+         <tem:PayNumber></tem:PayNumber>\r
+         <!--Optional:-->\r
+         <tem:FirstPay></tem:FirstPay>\r
+         <!--Optional:-->\r
+         <tem:AddPay></tem:AddPay>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:DealType>1</tem:DealType>\r
+         <!--Optional:-->\r
+         <tem:MType>1</tem:MType>\r
+         <!--Optional:-->\r
+         <tem:Opt>01</tem:Opt>\r
+         <!--Optional:-->\r
+         <tem:Note>notes</tem:Note>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
+         <!--Optional:-->\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
+         <!--Optional:-->\r
+         <tem:Email>kjgjkgkgg@e-c.co.il</tem:Email>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+                        </tem:DoDealPinPad>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="30490f56-8dc9-40b5-85b7-c255a4892bd1" name="Copy of DoDealPinPad  Secure"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="Copy of DoDealPinPad  Secure" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"><soap12:Body><DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>7551</ClientID>
+<Password>tova0527</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>1.00</TotalSum>
+<PayNumber>1</PayNumber>
+<FirstPay>1.00</FirstPay>
+<AddPay>0.00</AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone>
+</CellPhone>
+</DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="10b71fc4-180f-4f3b-9a71-5529dcc88b1a" name="Copy of DoDealPinPad  Secure 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="Copy of DoDealPinPad  Secure 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DoDealPinPad>\r
+         <!--Optional:-->\r
+         <tem:ClientID>7551</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>tova0527</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:ActionMethod>123456</tem:ActionMethod>\r
+         <!--Optional:-->\r
+         <tem:TotalSum>1</tem:TotalSum>\r
+         <!--Optional:-->\r
+         <tem:PayNumber></tem:PayNumber>\r
+         <!--Optional:-->\r
+         <tem:FirstPay></tem:FirstPay>\r
+         <!--Optional:-->\r
+         <tem:AddPay></tem:AddPay>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:DealType>1</tem:DealType>\r
+         <!--Optional:-->\r
+         <tem:MType>1</tem:MType>\r
+         <!--Optional:-->\r
+         <tem:Opt>01</tem:Opt>\r
+         <!--Optional:-->\r
+         <tem:Note>notes</tem:Note>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
+         <!--Optional:-->\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
+         <!--Optional:-->\r
+         <tem:Email>kjgjkgkgg@e-c.co.il</tem:Email>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+<tem:PinPadModularityTerminalID> 2000006219</tem:PinPadModularityTerminalID>
+                        </tem:DoDealPinPad>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="0cb28bd5-3181-4ef5-b1ea-f745d1e45973" name="Copy of DoDealPinPad  Secure 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="Copy of DoDealPinPad  Secure 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DoDealPinPad>\r
+         <!--Optional:-->\r
+         <tem:ClientID>7551</tem:ClientID>\r
+         <!--Optional:-->\r
+         <tem:Password>tova0527</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:ActionMethod>123456</tem:ActionMethod>\r
+         <!--Optional:-->\r
+         <tem:TotalSum>0.1</tem:TotalSum>\r
+         <!--Optional:-->\r
+         <tem:PayNumber></tem:PayNumber>\r
+         <!--Optional:-->\r
+         <tem:FirstPay></tem:FirstPay>\r
+         <!--Optional:-->\r
+         <tem:AddPay></tem:AddPay>\r
+         <!--Optional:-->\r
+         <tem:TZ>348658899</tem:TZ>\r
+         <!--Optional:-->\r
+         <tem:DealType>1</tem:DealType>\r
+         <!--Optional:-->\r
+         <tem:MType>1</tem:MType>\r
+         <!--Optional:-->\r
+         <tem:Opt>01</tem:Opt>\r
+         <!--Optional:-->\r
+         <tem:Note>notes</tem:Note>\r
+         <!--Optional:-->\r
+         <tem:OwnerName>yelk</tem:OwnerName>\r
+         <!--Optional:-->\r
+         <tem:ExternalID>123456</tem:ExternalID>\r
+         <!--Optional:-->\r
+         <tem:Email>kjgjkgkgg@e-c.co.il</tem:Email>\r
+         <!--Optional:-->\r
+         <tem:CellPhone>0585456911</tem:CellPhone>\r
+          </tem:DoDealPinPad>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="9cd4ffcd-d563-4ea2-a281-0a0b3f28346c" name="Copy of Copy of DoDealPinPad  Secure 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="Copy of Copy of DoDealPinPad  Secure 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="dbb002e5-f37e-41de-8dfd-90e4e717d046"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/service.asmx</con:endpoint><con:request><![CDATA[<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+<soap12:Body>
+<DoDealPinPad xmlns="http://tempuri.org/">
+<ClientID>7551</ClientID>
+<Password>tova0527</Password>
+<ActionMethod>00</ActionMethod>
+<TotalSum>1.00</TotalSum>
+<PayNumber>1</PayNumber>
+<FirstPay>1.00</FirstPay>
+<AddPay>0.00</AddPay>
+<TZ></TZ>
+<DealType>1</DealType>
+<MType>1</MType>
+<Opt>01</Opt>
+<Note></Note>
+<OwnerName></OwnerName>
+<Email></Email>
+<CellPhone></CellPhone>
+</DoDealPinPad>
+</soap12:Body>
+</soap12:Envelope>]]></con:request><con:assertion type="SOAP Response" id="aacd66bf-f3a5-46d3-ba82-8249b98ce967" name="SOAP Response"/><con:assertion type="Simple Contains" id="43ef8cc1-5a3c-4a67-ab21-efe1ae1b910d" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/DoDealPinPad"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="92bbdece-b443-4f88-9c78-9b22ebebdf16" name="BigBoss"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f30d25b5-5f8c-43b3-8052-4fa5a82d085e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DoDeal from PAX" searchProperties="true"><con:settings/><con:testStep type="request" id="870c2a1d-675e-405f-8512-38d196426e4b" name="DoDealPinPad -PAX Secure"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoap12</con:interface><con:operation>DoDealPinPad</con:operation><con:request name="DoDealPinPad -PAX Secure" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4a359222-c6e3-4bb5-af28-4ed92f82ca08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://secure.e-c.co.il/Service/Service.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DoDealPinPad>
+         <!--Optional:-->
+         <tem:ClientID>3699</tem:ClientID>
+         <!--Optional:-->
+         <tem:Password>.</tem:Password>
+         <!--Optional:-->
+         <tem:ActionMethod>00</tem:ActionMethod>
+         <!--Optional:-->
+         <tem:TotalSum>1</tem:TotalSum>
+         <!--Optional:-->
+         <tem:PayNumber></tem:PayNumber>
+         <!--Optional:-->
+         <tem:FirstPay></tem:FirstPay>
+         <!--Optional:-->
+         <tem:AddPay></tem:AddPay>
+         <!--Optional:-->
+         <tem:TZ>348658899</tem:TZ>
+         <!--Optional:-->
+         <tem:DealType>1</tem:DealType>
+         <!--Optional:-->
+         <tem:MType>1</tem:MType>
+         <!--Optional:-->
+         <tem:Opt>01</tem:Opt>
+         <!--Optional:-->
+         <tem:Note>Test/Test?Test#$%</tem:Note>
+         <!--Optional:-->
+         <tem:OwnerName>Yelena</tem:OwnerName>
+         <!--Optional:-->
+         <tem:ExternalID>123456</tem:ExternalID>
+         <!--Optional:-->
+         <tem:Email>korsakovyelena@gmail.com</tem:Email>
+         <!--Optional:-->
+         <tem:CellPhone>0585456911</tem:CellPhone>
+         <!--Optional:-->
+         <tem:PinPadModularityTerminalID>2000006177</tem:PinPadModularityTerminalID>
+      </tem:DoDealPinPad>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3f88ee32-7859-4dad-8ae4-a8cbbc3331c9" name="SOAP Response"/><con:assertion type="Simple Contains" id="51b31db1-ed30-47d0-a028-ef812fb3f0bc" name="Contains"><con:configuration><token>Code=000</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ServiceSoap/DoDealPinPadRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

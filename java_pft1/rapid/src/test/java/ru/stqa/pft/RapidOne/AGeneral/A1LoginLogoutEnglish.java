@@ -26,14 +26,14 @@ public class A1LoginLogoutEnglish {
     @Test
     public void testLoginLogout() throws Exception {
         driver.get("https://revitalc.rapid-image.net/login");
-        driver.manage().window().maximize();
-        driver.findElement(By.cssSelector("input.form-control.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-required")).click();
-        driver.findElement(By.xpath("//input[@type='text']")).clear();
-        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("admin");
-        driver.findElement(By.xpath("//input[@type='password']")).clear();
+        driver.findElement(By.xpath("//input[@type='text']")).click();
+        driver.findElement(By.name("loginForm")).click();
+        //driver.findElement(By.name("loginForm")).clear();
+        driver.findElement(By.name("loginForm")).sendKeys("Admin");
+        driver.findElement(By.xpath("//input[@type='password']")).click();
+       // driver.findElement(By.xpath("//input[@type='password']")).clear();
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Admin_123");
         driver.findElement(By.cssSelector("button.login_btn.btn.ng-binding")).click();
-        Thread.sleep(4000);
         if(driver.findElement(By.cssSelector("div.container-fluid.ng-scope")).isDisplayed() ) {
         driver.findElement(By.cssSelector("input.btn.btn-default.customBtn.send-confirmation-message-btn")).click();
         }

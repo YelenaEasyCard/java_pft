@@ -70,14 +70,14 @@ public class Client9667U {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        baseUrl = "https://secure.e-c.co.il";
+        baseUrl = "https://stage.e-c.co.il";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
     public void testCheckList() throws Exception {
         //LoginEmployerLogout
-        driver.get("https://secure.e-c.co.il/Accounts/Login");
+        driver.get("https://stage.e-c.co.il/Accounts/Login");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -320,7 +320,7 @@ public class Client9667U {
         new Select(driver.findElement(By.id("Code"))).selectByValue("00");
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
-        driver.findElement(By.id("Sum")).sendKeys("22");
+        driver.findElement(By.id("Sum")).sendKeys("10");
         new Select(driver.findElement(By.id("MType"))).selectByValue("1");
         driver.findElement(By.id("OwnerName")).click();
         driver.findElement(By.id("OwnerName")).clear();
@@ -355,7 +355,7 @@ public class Client9667U {
         new Select(driver.findElement(By.id("Year2"))).selectByVisibleText("2021");
         driver.findElement(By.id("Sum")).click();
         driver.findElement(By.id("Sum")).clear();
-        driver.findElement(By.id("Sum")).sendKeys("18");
+        driver.findElement(By.id("Sum")).sendKeys("12");
         new Select(driver.findElement(By.id("MType"))).selectByValue("1");
         driver.findElement(By.id("OwnerName")).click();
         driver.findElement(By.id("OwnerName")).clear();
